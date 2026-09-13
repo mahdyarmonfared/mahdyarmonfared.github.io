@@ -189,21 +189,36 @@ export function BeforeAfter({ lang }) {
       </div>
 
       {/* Benchmarks & Live Metrics Grid */}
-      <div className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4" data-reveal="true">
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4" data-reveal="true">
         {BEFORE_AFTER.metrics.map((m, i) => (
           <div
             key={i}
-            className="rounded-xl border border-line bg-coal/70 p-3 sm:p-5 flex flex-col justify-between gap-2 sm:gap-3 transition-colors hover:border-ember/50"
+            className="rounded-xl border border-line bg-coal/80 p-3.5 sm:p-4 lg:p-5 flex flex-col justify-between gap-2.5 sm:gap-3.5 transition-colors hover:border-ember/50 shadow-lg shadow-black/40"
           >
-            <span className="mono text-[10px] uppercase tracking-wider text-mute">
-              {t(lang, m.label)}
-            </span>
-            <div className="flex items-baseline justify-between gap-2">
-              <span className="line-through text-xs text-mute mono">{m.before}</span>
-              <span className="font-display text-2xl font-black text-bone">{m.after}</span>
-              <span className="mono rounded bg-emerald-500/15 border border-emerald-500/30 px-1.5 py-0.5 text-[10px] font-bold text-emerald-300">
+            {/* Top row: Label & Diff Badge */}
+            <div className="flex items-center justify-between gap-2 min-w-0">
+              <span className="mono text-[10px] sm:text-[11px] uppercase tracking-wider text-mute truncate whitespace-nowrap">
+                {t(lang, m.label)}
+              </span>
+              <span className="mono shrink-0 rounded bg-emerald-500/15 border border-emerald-500/30 px-2 py-0.5 text-[9px] sm:text-[10px] font-bold text-emerald-300">
                 {m.diff}
               </span>
+            </div>
+
+            {/* Bottom row: Before -> After */}
+            <div className="flex items-baseline justify-between gap-2 min-w-0 pt-2 border-t border-line/40">
+              <div className="flex items-center gap-1.5 min-w-0">
+                <span className="text-[10px] mono text-mute/80 uppercase">{lang === "fa" ? "سابق:" : "was:"}</span>
+                <span className="line-through text-xs sm:text-sm text-mute mono truncate max-w-[100px] sm:max-w-none">
+                  {m.before}
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5 min-w-0 shrink-0">
+                <span className="text-emerald-400 text-xs font-bold">→</span>
+                <span className="font-display text-lg sm:text-xl lg:text-2xl font-black text-bone tracking-tight">
+                  {m.after}
+                </span>
+              </div>
             </div>
           </div>
         ))}

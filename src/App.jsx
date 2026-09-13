@@ -112,8 +112,24 @@ function PortfolioApp() {
     if (route !== "/") return;
     const tls = registerReveals();
     const id = setTimeout(() => ScrollTrigger.refresh(), 350);
+
+    let resizeTimer = null;
+    const handleResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        window.__lenis?.resize();
+        ScrollTrigger.refresh();
+      }, 100);
+    };
+
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("orientationchange", handleResize);
+
     return () => {
       clearTimeout(id);
+      clearTimeout(resizeTimer);
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("orientationchange", handleResize);
       tls.forEach((t2) => t2.kill());
     };
   }, [lang, route]);

@@ -635,26 +635,26 @@ const BEFORE_AFTER = {
   ],
   metrics: [
     {
-      label: { en: "Largest Contentful Paint (LCP)", fa: "زمان لود محتوای اصلی (LCP)" },
+      label: { en: "LCP Load Speed", fa: "سرعت لودینگ (LCP)" },
       before: "5.2s",
       after: "680ms",
       diff: "-87%"
     },
     {
-      label: { en: "Google PageSpeed Score", fa: "امتیاز عملکرد پیج‌اسپید" },
+      label: { en: "Google PageSpeed", fa: "امتیاز پیج‌اسپید" },
       before: "44 / 100",
       after: "99 / 100",
       diff: "+125%"
     },
     {
-      label: { en: "Audio & Interaction Engine", fa: "موتور صدا و تعاملات صوتی" },
-      before: "Silent / None",
-      after: "Web Audio SFX",
+      label: { en: "Web Audio Engine", fa: "موتور صوتی وب" },
+      before: "Silent",
+      after: "Web Audio",
       diff: "60 FPS"
     },
     {
-      label: { en: "Theme Architecture", fa: "سیستم تم و هویت بصری" },
-      before: "Fixed Commercial",
+      label: { en: "Visual Theme", fa: "معماری تم بصری" },
+      before: "Commercial",
       after: "Vice City Neon",
       diff: "DYNAMIC"
     }

@@ -36,8 +36,22 @@ function useSmoothScroll() {
       if (locked) lenis.stop();
       else lenis.start();
     };
+    let resizeTimer = null;
+    const onResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        lenis.resize();
+        ScrollTrigger.refresh();
+      }, 80);
+    };
+    window.addEventListener("resize", onResize);
+    window.addEventListener("orientationchange", onResize);
+
     ScrollTrigger.refresh();
     return () => {
+      clearTimeout(resizeTimer);
+      window.removeEventListener("resize", onResize);
+      window.removeEventListener("orientationchange", onResize);
       document.removeEventListener("click", onClick);
       gsap.ticker.remove(raf);
       lenis.destroy();

@@ -19,7 +19,8 @@ import {
   IconDocument,
   IconGlobe,
   IconPlay,
-  IconClose
+  IconClose,
+  IconMenu
 } from "./Icons.jsx";
 import EmojiRain from "../components/EmojiRain.jsx";
 
@@ -233,16 +234,17 @@ function Nav({
 
             {/* Mobile menu hamburger */}
             <button
+              type="button"
               onClick={() => {
                 playClick(440);
                 setOpen((v) => !v);
               }}
               data-cursor="link"
-              className="grid size-8 place-items-center rounded-full border border-line text-bone transition-all duration-200 hover:border-ember hover:text-ember-hi hover:bg-ember/10 xl:hidden cursor-pointer shrink-0"
+              className="grid size-9 place-items-center rounded-full border border-line/80 bg-smoke/80 text-bone transition-all duration-200 hover:border-ember hover:text-ember-hi hover:bg-ember/15 xl:hidden cursor-pointer shrink-0 shadow-sm"
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
             >
-              {open ? <IconClose className="size-3.5" /> : "≡"}
+              {open ? <IconClose className="size-4 text-ember-hi" /> : <IconMenu className="size-4 text-bone" />}
             </button>
           </div>
         </div>
@@ -302,12 +304,7 @@ function MobileMenu({
 
     const el = ref.current;
     if (el) {
-      gsap.fromTo(el, { autoAlpha: 0, y: -12, scale: 0.98 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.35, ease: "power3.out" });
-      gsap.fromTo(
-        el.querySelectorAll("[data-menu-item]"),
-        { autoAlpha: 0, x: lang === "fa" ? -16 : 16 },
-        { autoAlpha: 1, x: 0, duration: 0.35, delay: 0.05, stagger: 0.04, ease: "power3.out" }
-      );
+      gsap.fromTo(el, { autoAlpha: 0, y: -10 }, { autoAlpha: 1, y: 0, duration: 0.25, ease: "power2.out" });
     }
 
     return () => {
@@ -318,11 +315,11 @@ function MobileMenu({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center p-3 pt-18 sm:p-6 xl:hidden"
+      className="fixed inset-0 z-[100] flex items-start justify-center p-3 pt-20 sm:p-6 xl:hidden"
       data-lenis-prevent="true"
     >
       <div
-        className="absolute inset-0 bg-void/85 backdrop-blur-md transition-opacity"
+        className="absolute inset-0 bg-void/90 backdrop-blur-md transition-opacity"
         onClick={onNavigate}
         aria-hidden="true"
       />
@@ -333,8 +330,26 @@ function MobileMenu({
         aria-modal="true"
         aria-label="Navigation menu"
         data-lenis-prevent="true"
-        className="relative z-10 w-full max-w-lg max-h-[calc(100svh-5rem)] overflow-y-auto overscroll-contain no-scrollbar rounded-2xl border border-line bg-coal p-6 shadow-2xl shadow-black/80"
+        className="relative z-10 w-full max-w-lg max-h-[calc(100svh-6rem)] overflow-y-auto overscroll-contain no-scrollbar rounded-2xl border border-line bg-coal p-5 sm:p-6 shadow-2xl shadow-black/90"
       >
+        {/* Mobile menu header with quick close button */}
+        <div className="flex items-center justify-between pb-3 mb-2 border-b border-line/70 select-none">
+          <div className="flex items-center gap-2">
+            <span className="size-2 rounded-full bg-ember-hi anim-pulse-dot" />
+            <span className="mono text-xs font-bold text-bone tracking-widest uppercase">
+              {lang === "fa" ? "فهرست پرونده و ناوبری" : "ARCHIVE NAVIGATION"}
+            </span>
+          </div>
+          <button
+            type="button"
+            onClick={onNavigate}
+            className="size-8 rounded-full border border-line bg-smoke flex items-center justify-center text-ash hover:text-ember-hi hover:border-ember transition-colors cursor-pointer"
+            aria-label="Close menu"
+          >
+            <IconClose className="size-4" />
+          </button>
+        </div>
+
         {/* Navigation links */}
         <div className="flex flex-col divide-y divide-line/60">
           {SECTIONS.map((id, i) => (

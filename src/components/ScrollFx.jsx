@@ -139,8 +139,9 @@ export function registerReveals(scope) {
 
     return ScrollTrigger.create({
       trigger: el,
-      start: "top 88%",
+      start: "top 90%",
       once: true,
+      invalidateOnRefresh: true,
       onEnter: () => {
         el._revealed = true;
         gsap.to(el, {

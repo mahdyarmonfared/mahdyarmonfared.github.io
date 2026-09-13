@@ -9,16 +9,35 @@ function usePointer() {
   return pos;
 }
 function useFinePointer() {
-  const [fine, setFine] = useState(
-    () => typeof matchMedia !== "undefined" && matchMedia("(pointer: fine)").matches
-  );
+  const check = () =>
+    typeof matchMedia !== "undefined" &&
+    matchMedia("(pointer: fine)").matches &&
+    typeof window !== "undefined" &&
+    window.innerWidth >= 1024;
+
+  const [fine, setFine] = useState(check);
+
   useEffect(() => {
     const mq = matchMedia("(pointer: fine)");
-    const cb = (e) => setFine(e.matches);
-    mq.addEventListener("change", cb);
-    document.documentElement.classList.toggle("fine-pointer", fine);
-    return () => mq.removeEventListener("change", cb);
-  }, [fine]);
+    const update = () => {
+      const isFine = check();
+      setFine(isFine);
+      document.documentElement.classList.toggle("fine-pointer", isFine);
+    };
+
+    mq.addEventListener?.("change", update);
+    window.addEventListener("resize", update);
+    window.addEventListener("orientationchange", update);
+
+    document.documentElement.classList.toggle("fine-pointer", check());
+
+    return () => {
+      mq.removeEventListener?.("change", update);
+      window.removeEventListener("resize", update);
+      window.removeEventListener("orientationchange", update);
+    };
+  }, []);
+
   return fine;
 }
 function usePrefersReducedMotion() {
