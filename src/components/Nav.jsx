@@ -1,5 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
-import gsap from "gsap";
+import { Fragment, useEffect, useState, useRef } from "react";
 import { NAV, BRAND, SCENE_LABELS, t, STR } from "../content.js";
 import { useLang } from "../context/LangContext.jsx";
 import {
@@ -19,8 +18,7 @@ import {
   IconDocument,
   IconGlobe,
   IconPlay,
-  IconClose,
-  IconMenu
+  IconClose
 } from "./Icons.jsx";
 import EmojiRain from "../components/EmojiRain.jsx";
 
@@ -82,7 +80,7 @@ function Nav({
 
   return (
     <Fragment>
-      <header className="fixed inset-x-0 top-0 z-50 transition-all duration-300 backdrop-blur-md bg-void/80 border-b border-line/50">
+      <header className="fixed inset-x-0 top-0 z-[120] transition-all duration-300 backdrop-blur-md bg-void/85 border-b border-line/50">
         <div className="mx-auto flex max-w-[125rem] items-center justify-between gap-3 px-4 py-3 sm:px-8 xl:px-12 sm:py-4">
           {/* Brand */}
           <a
@@ -203,7 +201,7 @@ function Nav({
               title={t(lang, { en: "Explore Sitemap (Mega Menu)", fa: "فهرست و نقشه جامع" })}
               aria-label="Mega Menu"
             >
-              <IconMenuGrid className="size-3.5 shrink-0" />
+              <IconMenuGrid className="size-3.5" />
               <span className="hidden 2xl:inline">{t(lang, { en: "Index", fa: "فهرست" })}</span>
             </button>
 
@@ -232,7 +230,7 @@ function Nav({
               {lang === "fa" ? "EN" : "فا"}
             </button>
 
-            {/* Mobile menu hamburger */}
+            {/* Mobile menu hamburger toggle with animated CSS bars */}
             <button
               type="button"
               onClick={() => {
@@ -240,11 +238,29 @@ function Nav({
                 setOpen((v) => !v);
               }}
               data-cursor="link"
-              className="grid size-9 place-items-center rounded-full border border-line/80 bg-smoke/80 text-bone transition-all duration-200 hover:border-ember hover:text-ember-hi hover:bg-ember/15 xl:hidden cursor-pointer shrink-0 shadow-sm"
-              aria-label={open ? "Close menu" : "Open menu"}
+              className={`relative flex size-10 flex-col items-center justify-center gap-1.5 rounded-xl border transition-all duration-200 xl:hidden cursor-pointer shrink-0 shadow-md ${
+                open
+                  ? "border-ember/80 bg-ember/20 text-ember-hi shadow-[0_0_12px_rgba(232,163,61,0.35)]"
+                  : "border-line/80 bg-coal/90 text-bone hover:border-ember hover:bg-smoke"
+              }`}
+              aria-label={open ? (lang === "fa" ? "بستن منو" : "Close menu") : (lang === "fa" ? "باز کردن منو" : "Open menu")}
               aria-expanded={open}
             >
-              {open ? <IconClose className="size-4 text-ember-hi" /> : <IconMenu className="size-4 text-bone" />}
+              <span
+                className={`h-0.5 w-5 rounded-full transition-all duration-300 ${
+                  open ? "translate-y-2 rotate-45 bg-ember-hi" : "bg-bone"
+                }`}
+              />
+              <span
+                className={`h-0.5 w-5 rounded-full transition-all duration-300 ${
+                  open ? "opacity-0 scale-x-0" : "bg-bone"
+                }`}
+              />
+              <span
+                className={`h-0.5 w-5 rounded-full transition-all duration-300 ${
+                  open ? "-translate-y-2 -rotate-45 bg-ember-hi" : "bg-bone"
+                }`}
+              />
             </button>
           </div>
         </div>
@@ -299,27 +315,25 @@ function MobileMenu({
     };
     window.addEventListener("keydown", onKeyDown);
 
+    // Stop Lenis background scrolling while mobile menu is open
+    window.__lockScroll?.(true);
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-
-    const el = ref.current;
-    if (el) {
-      gsap.fromTo(el, { autoAlpha: 0, y: -10 }, { autoAlpha: 1, y: 0, duration: 0.25, ease: "power2.out" });
-    }
 
     return () => {
       window.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = prevOverflow;
+      window.__lockScroll?.(false);
     };
-  }, [lang, onNavigate]);
+  }, [onNavigate]);
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-start justify-center p-3 pt-20 sm:p-6 xl:hidden"
+      className="fixed inset-0 z-[110] flex items-start justify-center p-3 pt-20 sm:p-6 xl:hidden"
       data-lenis-prevent="true"
     >
       <div
-        className="absolute inset-0 bg-void/90 backdrop-blur-md transition-opacity"
+        className="absolute inset-0 bg-void/90 backdrop-blur-md transition-opacity cursor-pointer"
         onClick={onNavigate}
         aria-hidden="true"
       />
@@ -328,9 +342,10 @@ function MobileMenu({
         ref={ref}
         role="dialog"
         aria-modal="true"
-        aria-label="Navigation menu"
+        aria-label={lang === "fa" ? "فهرست پرونده و ناوبری" : "Navigation menu"}
         data-lenis-prevent="true"
-        className="relative z-10 w-full max-w-lg max-h-[calc(100svh-6rem)] overflow-y-auto overscroll-contain no-scrollbar rounded-2xl border border-line bg-coal p-5 sm:p-6 shadow-2xl shadow-black/90"
+        style={{ WebkitOverflowScrolling: "touch", touchAction: "pan-y" }}
+        className="relative z-10 w-full max-w-lg max-h-[calc(100svh-5.5rem)] overflow-y-auto overscroll-contain no-scrollbar rounded-2xl border border-line bg-coal/98 p-5 sm:p-6 shadow-2xl shadow-black/95 transition-all"
       >
         {/* Mobile menu header with quick close button */}
         <div className="flex items-center justify-between pb-3 mb-2 border-b border-line/70 select-none">
@@ -343,10 +358,13 @@ function MobileMenu({
           <button
             type="button"
             onClick={onNavigate}
-            className="size-8 rounded-full border border-line bg-smoke flex items-center justify-center text-ash hover:text-ember-hi hover:border-ember transition-colors cursor-pointer"
-            aria-label="Close menu"
+            className="flex items-center gap-1.5 rounded-full border border-line bg-smoke/80 px-2.5 py-1 text-xs mono text-ash hover:text-ember-hi hover:border-ember transition-colors cursor-pointer"
+            aria-label={lang === "fa" ? "بستن منو" : "Close menu"}
           >
-            <IconClose className="size-4" />
+            <IconClose className="size-3.5" />
+            <span className="text-[10px] uppercase tracking-wider font-bold">
+              {lang === "fa" ? "بستن" : "CLOSE"}
+            </span>
           </button>
         </div>
 
