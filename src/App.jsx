@@ -111,7 +111,9 @@ function PortfolioApp() {
   useEffect(() => {
     if (route !== "/") return;
     const tls = registerReveals();
-    const id = setTimeout(() => ScrollTrigger.refresh(), 350);
+    ScrollTrigger.refresh();
+    const id1 = setTimeout(() => ScrollTrigger.refresh(), 50);
+    const id2 = setTimeout(() => ScrollTrigger.refresh(), 300);
 
     let resizeTimer = null;
     const handleResize = () => {
@@ -119,14 +121,15 @@ function PortfolioApp() {
       resizeTimer = setTimeout(() => {
         window.__lenis?.resize();
         ScrollTrigger.refresh();
-      }, 100);
+      }, 50);
     };
 
     window.addEventListener("resize", handleResize);
     window.addEventListener("orientationchange", handleResize);
 
     return () => {
-      clearTimeout(id);
+      clearTimeout(id1);
+      clearTimeout(id2);
       clearTimeout(resizeTimer);
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("orientationchange", handleResize);

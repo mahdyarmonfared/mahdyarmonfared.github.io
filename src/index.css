@@ -35,14 +35,24 @@ html {
   scrollbar-width: none;
   -ms-overflow-style: none;
   -webkit-tap-highlight-color: transparent;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
   font-family: var(--font-display);
   color: var(--color-bone);
+  width: 100%;
+  max-width: 100vw;
   overflow-x: hidden;
   font-optical-sizing: auto;
-  min-width: 320px;
+}
+
+#root {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 [dir="rtl"] body {

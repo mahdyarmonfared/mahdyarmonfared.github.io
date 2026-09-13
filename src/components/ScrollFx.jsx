@@ -119,7 +119,17 @@ export function registerReveals(scope) {
   const root = scope ?? document;
   const elements = gsap.utils.toArray("[data-reveal]", root);
 
-  // Set initial position for elements that haven't entered yet
+  // On mobile / small screens (< 1024px), make all content immediately visible on entry!
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 1024;
+  if (isMobile) {
+    elements.forEach((el) => {
+      el._revealed = true;
+      gsap.set(el, { autoAlpha: 1, y: 0, clearProps: "all" });
+    });
+    return [];
+  }
+
+  // Set initial position for elements that haven't entered yet on desktop
   elements.forEach((el) => {
     if (!el._revealed) {
       const y = Number(el.dataset.y ?? 28);

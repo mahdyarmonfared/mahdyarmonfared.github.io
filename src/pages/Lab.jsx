@@ -446,7 +446,7 @@ class MercuryRipple {
   };
 
   return (
-    <div className="min-h-svh bg-void text-bone relative flex flex-col">
+    <div className="min-h-svh w-full max-w-full overflow-x-hidden bg-void text-bone relative flex flex-col">
       {/* Header */}
       <header className="sticky top-0 z-40 border-b border-line/60 bg-void/80 backdrop-blur-md px-4 sm:px-10 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">

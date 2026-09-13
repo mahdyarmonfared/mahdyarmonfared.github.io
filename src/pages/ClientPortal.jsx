@@ -236,7 +236,7 @@ export default function ClientPortal({ onGoHome, onMegaMenu, onSoundscapeModal }
   return (
     <div
       dir={fa ? "rtl" : "ltr"}
-      className="grain vignette relative min-h-svh w-full bg-void text-bone py-6 px-4 sm:px-8 lg:px-12 flex flex-col justify-between"
+      className="grain vignette relative min-h-svh w-full max-w-full overflow-x-hidden bg-void text-bone py-6 px-4 sm:px-8 lg:px-12 flex flex-col justify-between"
     >
       {/* Top Header */}
       <header className="relative z-20 flex flex-wrap items-center justify-between gap-4 border-b border-line/60 pb-5 mb-8">

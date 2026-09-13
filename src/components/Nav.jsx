@@ -149,7 +149,7 @@ function Nav({
             <button
               onClick={handleToggleSound}
               data-cursor="link"
-              className={`mono rounded-full border size-8 text-[10px] transition-all duration-200 flex items-center justify-center cursor-pointer shrink-0 ${
+              className={`mono rounded-full border size-8 text-[10px] transition-all duration-200 hidden sm:flex items-center justify-center cursor-pointer shrink-0 ${
                 sound
                   ? "border-line text-ash hover:border-ember hover:text-ember-hi hover:bg-ember/10"
                   : "border-red-500/40 text-red-400 bg-red-500/10"

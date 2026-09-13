@@ -6,16 +6,31 @@ gsap.registerPlugin(ScrollTrigger);
 function useSmoothScroll() {
   useEffect(() => {
     const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) {
+    const isMobile =
+      typeof window !== "undefined" &&
+      (window.innerWidth < 1024 || matchMedia("(pointer: coarse)").matches);
+
+    if (reduced || isMobile) {
       ScrollTrigger.refresh();
-      return;
+      const onMobileClick = (e) => {
+        const a = e.target.closest?.('a[href^="#"]');
+        if (!a) return;
+        const id = a.getAttribute("href").slice(1);
+        const el = document.getElementById(id);
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: "smooth" });
+      };
+      document.addEventListener("click", onMobileClick);
+      return () => document.removeEventListener("click", onMobileClick);
     }
+
     const lenis = new Lenis({
       duration: 1.15,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
       wheelMultiplier: 0.9,
-      touchMultiplier: 1.4
+      touchMultiplier: 0
     });
     window.__lenis = lenis;
     lenis.on("scroll", ScrollTrigger.update);
