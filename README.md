@@ -4,7 +4,7 @@
 
 **Cinematic Noir Frontend Architecture & Bespoke Interactive Experiences**
 
-[🌟 Live Demo](https://mahdyarmonfared.github.io/monfared-portfolio/) · [💼 Profile](https://github.com/mahdyarmonfared) · [📫 Get in Touch](mailto:mahdyar.monfared09@gmail.com)
+[🌟 Live Demo](https://mahdyarmonfared.github.io/) · [💼 Profile](https://github.com/mahdyarmonfared) · [📫 Get in Touch](mailto:mahdyar.monfared09@gmail.com)
 
 ---
 
@@ -64,10 +64,10 @@ An unconventional, detective-noir themed personal portfolio engineered with prec
 
 ```bash
 # Clone repository
-git clone https://github.com/mahdyarmonfared/monfared-portfolio.git
+git clone https://github.com/mahdyarmonfared/mahdyarmonfared.github.io.git
 
 # Navigate into workspace
-cd monfared-portfolio
+cd mahdyarmonfared.github.io
 
 # Install dependencies
 npm install
