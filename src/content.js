@@ -38,8 +38,8 @@ const ABOUT = {
   code: "NO. 2009-MHD-∅",
   paragraphs: [
     {
-      en: "Born August 25, 2009. Operating from Mashhad, Iran. I design and build modern web interfaces the way some people write noir novels — sharp typography, tactile responsiveness, and an experience that commands attention.",
-      fa: "متولد ۲۵ اوت ۲۰۰۹ (۳ شهریور ۱۳۸۸)؛ مستقر در مشهد، ایران. وب‌سایت‌ها و رابط‌های کاربری را با روایتی نوآر و متمایز خلق می‌کنم: تایپوگرافی چشم‌نواز، واکنش‌های لمسی روان، و ساختاری که فراتر از قالب‌های کلیشه‌ای اثر می‌گذارد."
+      en: "Born in 2009. Operating from Mashhad, Iran. I design and build modern web interfaces the way some people write noir novels — sharp typography, tactile responsiveness, and an experience that commands attention.",
+      fa: "متولد ۲۰۰۹ (۱۳۸۸)؛ مستقر در مشهد، ایران. وب‌سایت‌ها و رابط‌های کاربری را با روایتی نوآر و متمایز خلق می‌کنم: تایپوگرافی چشم‌نواز، واکنش‌های لمسی روان، و ساختاری که فراتر از قالب‌های کلیشه‌ای اثر می‌گذارد."
     },
     {
       en: "JavaScript and React are my daily drivers, fortified with Tailwind CSS, SCSS, Bootstrap, and thorough mastery of WordPress and its entire plugin ecosystem. I don't build pages that merely sit on the screen; I craft responsive digital surfaces designed to convert and engage.",
@@ -58,7 +58,7 @@ const ABOUT = {
     statusOpen: { en: "OPEN — Freelance & Full-time", fa: "آماده همکاری — فریلنسری و تمام‌وقت" },
     focusVal: { en: "Web Design & Modern Frontend", fa: "طراحی سایت و توسعه فرانت‌اند مدرن" },
     baseVal: { en: "Mashhad, Iran", fa: "مشهد، ایران" },
-    bornVal: { en: "25 Aug 2009 — Mashhad", fa: "۲۵ اوت ۲۰۰۹ (۳ شهریور ۱۳۸۸) — مشهد" }
+    bornVal: { en: "2009 — Mashhad", fa: "۱۳۸۸ (2009) — مشهد" }
   }
 };
 const SKILLS_TITLE = { en: "THE ARSENAL", fa: "زرادخانه فنی" };
