@@ -57,9 +57,9 @@ export function Contact({ lang }) {
               onClick={copyEmail}
               data-cursor="view"
               data-cursor-label={copied ? "✓" : "COPY"}
-              className="group block text-start"
+              className="group block text-start max-w-full"
             >
-              <span className="latin block break-all font-display text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-bone transition-colors group-hover:text-ember">
+              <span className="latin block whitespace-nowrap font-display text-[clamp(0.98rem,4.2vw,2.5rem)] font-extrabold tracking-tight text-bone transition-colors group-hover:text-ember">
                 {CONTACT.email}
               </span>
               <span className="mono mt-2 block text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-mute">
