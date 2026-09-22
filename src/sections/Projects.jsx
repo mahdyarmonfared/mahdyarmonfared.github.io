@@ -4,6 +4,7 @@ import { SectionShell } from "./About.jsx";
 import { Tilt, Magnetic, Scramble } from "../components/Effects.jsx";
 import {
   PROJECTS,
+  PROJECTS_CATEGORIES,
   PROJECTS_TITLE,
   PROJECTS_SUB,
   SCENE_LABELS,
@@ -30,6 +31,7 @@ const STATUS_BADGE = {
 
 export function Projects({ lang }) {
   const [open, setOpen] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   useEffect(() => {
     const onOpenCase = (e) => {
@@ -53,72 +55,160 @@ export function Projects({ lang }) {
     setOpen(null);
   };
 
+  const filteredProjects =
+    selectedCategory === "all"
+      ? PROJECTS
+      : PROJECTS.filter((p) => p.category === selectedCategory);
+
+  const websiteCount = PROJECTS.filter((p) => p.category === "website").length;
+  const openSourceCount = PROJECTS.filter((p) => p.category === "opensource").length;
+
+  const categories = [
+    { id: "all", label: PROJECTS_CATEGORIES.all, count: PROJECTS.length, icon: "✦" },
+    { id: "website", label: PROJECTS_CATEGORIES.website, count: websiteCount, icon: "🌐" },
+    { id: "opensource", label: PROJECTS_CATEGORIES.opensource, count: openSourceCount, icon: "⚡" }
+  ];
+
   return (
     <SectionShell id="projects" index="03" title={t(lang, PROJECTS_TITLE)} sub={t(lang, SCENE_LABELS[2])}>
-      <p className="mono -mt-6 sm:-mt-8 mb-8 sm:mb-12 text-[10px] uppercase tracking-[0.25em] text-mute">
+      <p className="mono -mt-6 sm:-mt-8 mb-6 sm:mb-8 text-[10px] uppercase tracking-[0.25em] text-mute">
         {t(lang, PROJECTS_SUB)}
       </p>
 
-      <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {PROJECTS.map((p, i) => (
-          <Tilt key={p.id} max={5} className="h-full">
+      {/* Category Filter Tabs */}
+      <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-8 sm:mb-12">
+        {categories.map((cat) => {
+          const isActive = selectedCategory === cat.id;
+          return (
             <button
-              onClick={() => handleOpen(p)}
-              data-cursor="view"
-              data-cursor-label={lang === "fa" ? "بازکن" : "OPEN"}
+              key={cat.id}
+              onClick={() => {
+                playClick(520);
+                setSelectedCategory(cat.id);
+              }}
+              className={`mono flex items-center gap-2 rounded-full px-4 sm:px-5 py-2 text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                isActive
+                  ? "bg-ember text-void shadow-[0_0_18px_rgba(232,163,61,0.45)] font-bold scale-[1.02]"
+                  : "border border-line bg-coal/80 text-ash hover:border-ember/50 hover:text-bone hover:bg-coal"
+              }`}
+            >
+              <span>{cat.icon}</span>
+              <span>{t(lang, cat.label)}</span>
+              <span
+                className={`rounded-full px-2 py-0.5 text-[10px] mono ${
+                  isActive ? "bg-void/30 text-void font-extrabold" : "bg-smoke text-mute"
+                }`}
+              >
+                {cat.count}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Projects Grid */}
+      <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {filteredProjects.map((p, i) => (
+          <Tilt key={p.id} max={5} className="h-full">
+            <div
               data-reveal="true"
-              data-delay={(i % 2) * 0.1}
-              data-y={48}
-              className={`group relative flex h-full w-full flex-col overflow-hidden rounded-xl border border-line bg-coal p-6 sm:p-8 text-start transition-colors duration-500 ${ACCENTS[p.accent].border}`}
+              data-delay={(i % 3) * 0.08}
+              data-y={40}
+              className={`group relative flex h-full w-full flex-col overflow-hidden rounded-xl border border-line bg-coal p-6 sm:p-8 text-start transition-all duration-500 hover:border-ember/60 hover:shadow-2xl hover:shadow-black/60 ${ACCENTS[p.accent].border}`}
             >
               <span className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ember/70 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-              <div className="mb-5 sm:mb-6 flex items-center justify-between gap-3">
-                <span className="mono text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-mute">
-                  {t(lang, CASE_LABEL)} №{String(i + 1).padStart(2, "0")} / {p.year}
-                </span>
+              {/* Card Header: Case index, Category pill, Status */}
+              <div className="mb-4 sm:mb-5 flex flex-wrap items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="mono text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-mute">
+                    {t(lang, CASE_LABEL)} №{String(PROJECTS.indexOf(p) + 1).padStart(2, "0")} / {p.year}
+                  </span>
+                  <span className="mono rounded border border-line/60 bg-smoke/80 px-2 py-0.5 text-[9px] text-ash flex items-center gap-1">
+                    <span>{p.category === "website" ? "🌐" : "⚡"}</span>
+                    <span>{p.category === "website" ? (lang === "fa" ? "وب‌سایت زنده" : "Live Web App") : (lang === "fa" ? "مخزن گیت‌هاب" : "GitHub Repo")}</span>
+                  </span>
+                </div>
                 <span
-                  className={`mono rounded-full border px-2.5 sm:px-3 py-0.5 sm:py-1 text-[8px] sm:text-[9px] uppercase tracking-widest ${STATUS_BADGE[p.status][lang]}`}
+                  className={`mono rounded-full border px-2.5 py-0.5 text-[8px] sm:text-[9px] uppercase tracking-widest ${STATUS_BADGE[p.status][lang]}`}
                 >
                   {p.status}
                 </span>
               </div>
 
-              <h3
-                className={`font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight transition-transform duration-500 group-hover:translate-x-1 ${ACCENTS[p.accent].text}`}
+              {/* Title & Click to Inspect */}
+              <button
+                type="button"
+                onClick={() => handleOpen(p)}
+                data-cursor="view"
+                data-cursor-label={lang === "fa" ? "بررسی" : "INSPECT"}
+                className="text-start group-hover:translate-x-1 transition-transform duration-300 cursor-pointer"
               >
-                {t(lang, p.name)}
-              </h3>
+                <h3
+                  className={`font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight ${ACCENTS[p.accent].text}`}
+                >
+                  {t(lang, p.name)}
+                </h3>
+              </button>
 
+              {/* Summary Description */}
               {p.summary && t(lang, p.summary) ? (
-                <p className="mt-3 line-clamp-3 max-w-md text-xs sm:text-sm leading-6 sm:leading-7 text-ash">
+                <p className="mt-3 line-clamp-3 text-xs sm:text-sm leading-6 sm:leading-7 text-ash">
                   {t(lang, p.summary)}
                 </p>
               ) : null}
 
-              <div className="mt-auto flex flex-wrap items-center gap-1.5 sm:gap-2 pt-6 sm:pt-8">
+              {/* Tech Stack Tags */}
+              <div className="mt-auto flex flex-wrap items-center gap-1.5 sm:gap-2 pt-5 sm:pt-6">
                 {(p.tagMap ? [t(lang, p.tagMap)] : p.tags).map((tg) => (
                   <span
                     key={tg}
-                    className={`mono rounded px-2 sm:px-2.5 py-0.5 sm:py-1 text-[9px] sm:text-[10px] tracking-wider ${ACCENTS[p.accent].bg} ${ACCENTS[p.accent].text}/90`}
+                    className={`mono rounded px-2 sm:px-2.5 py-0.5 text-[9px] sm:text-[10px] tracking-wider ${ACCENTS[p.accent].bg} ${ACCENTS[p.accent].text}/90`}
                   >
                     {tg}
                   </span>
                 ))}
               </div>
 
-              <div className="mt-5 sm:mt-6 flex items-center justify-between gap-2 text-[10px] sm:text-[11px] uppercase tracking-widest text-mute transition-colors group-hover:text-bone">
-                <div className="flex items-center gap-2">
+              {/* Footer Actions: Inspect modal + Direct Live/GitHub links */}
+              <div className="mt-5 sm:mt-6 pt-4 border-t border-line/50 flex flex-wrap items-center justify-between gap-2.5 text-[10px] sm:text-[11px] text-mute">
+                <button
+                  type="button"
+                  onClick={() => handleOpen(p)}
+                  className="flex items-center gap-1.5 text-ash hover:text-bone transition-colors cursor-pointer uppercase tracking-wider mono text-[10px]"
+                >
                   <span className={`size-1.5 rounded-full ${ACCENTS[p.accent].dot} anim-pulse-dot`} />
-                  {t(lang, OPEN_CASE)}
+                  <span>{t(lang, OPEN_CASE)}</span>
+                </button>
+
+                <div className="flex items-center gap-1.5">
+                  {p.links?.live && (
+                    <a
+                      href={p.links.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={() => playClick(600)}
+                      className="mono rounded border border-emerald-500/40 bg-emerald-500/10 px-2 py-0.5 text-[9px] font-bold text-emerald-400 hover:bg-emerald-500/25 transition-colors"
+                      title={lang === "fa" ? "مشاهده آنلاین در تب جدید" : "Open Live Demo"}
+                    >
+                      {lang === "fa" ? "دمو زنده ↗" : "LIVE ↗"}
+                    </a>
+                  )}
+                  {p.links?.github && (
+                    <a
+                      href={p.links.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={() => playClick(580)}
+                      className="mono rounded border border-line bg-smoke/80 px-2 py-0.5 text-[9px] font-bold text-ash hover:border-ember hover:text-ember-hi transition-colors"
+                      title={lang === "fa" ? "مشاهده مخزن در گیت‌هاب" : "View GitHub Repo"}
+                    >
+                      GitHub ↗
+                    </a>
+                  )}
                 </div>
-                {p.links?.live && (
-                  <span className="mono rounded border border-emerald-500/40 bg-emerald-500/10 px-2 py-0.5 text-[9px] font-bold text-emerald-400">
-                    {lang === "fa" ? "دموی زنده ↗" : "LIVE DEMO ↗"}
-                  </span>
-                )}
               </div>
-            </button>
+            </div>
           </Tilt>
         ))}
       </div>
@@ -494,6 +584,21 @@ function CaseFile({ project, lang, onClose }) {
                     </button>
                   </div>
                 )}
+              </div>
+            )}
+
+            {/* Quick Git Clone Snippet for Open Source Projects */}
+            {project.category === "opensource" && project.links?.github && (
+              <div data-row="true" className="mt-6 rounded-xl border border-line bg-void/90 p-4 mono text-xs">
+                <div className="flex items-center justify-between pb-2 mb-2 border-b border-line/40 text-[10px] text-mute">
+                  <span>{lang === "fa" ? "دریافت مخزن متن‌باز از گیت‌هاب" : "OPEN SOURCE REPOSITORY // GIT CLONE"}</span>
+                  <span className="text-emerald-400 font-bold">git CLI</span>
+                </div>
+                <div className="flex items-center justify-between gap-3 text-bone font-mono overflow-x-auto">
+                  <code className="text-ember-hi text-xs sm:text-sm">
+                    git clone {project.links.github}.git
+                  </code>
+                </div>
               </div>
             )}
 

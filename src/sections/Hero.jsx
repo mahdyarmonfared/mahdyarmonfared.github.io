@@ -163,35 +163,37 @@ function Hero({ lang, onTerminal, onResumeModal }) {
           {t(lang, HERO.tail)}
         </p>
 
-        {/* Action Buttons */}
+        {/* Action Buttons with Clear Visual Hierarchy */}
         <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3.5 sm:gap-4">
+          {/* Primary Action: View Projects */}
           <Magnetic strength={0.4} className="w-full sm:w-auto">
             <a
               href="#projects"
               data-cursor="view"
-              data-cursor-label="OPEN"
+              data-cursor-label={lang === "fa" ? "مشاهده" : "VIEW"}
               onClick={() => playClick(600)}
-              className="hero-cta inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-full bg-ember px-7 py-3.5 sm:px-8 sm:py-4 font-bold text-void transition-transform hover:scale-[1.03]"
+              className="hero-cta inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-full bg-ember px-8 py-4 font-bold text-void text-sm sm:text-base shadow-[0_0_24px_rgba(232,163,61,0.35)] transition-all hover:scale-[1.03] hover:shadow-[0_0_32px_rgba(232,163,61,0.5)]"
             >
               <span>{t(lang, HERO.cta)}</span>
-              <span aria-hidden="true" className={lang === "fa" ? "rotate-180" : ""}>
+              <span aria-hidden="true" className={lang === "fa" ? "rotate-180 font-bold" : "font-bold"}>
                 →
               </span>
             </a>
           </Magnetic>
 
+          {/* Secondary Action: Contact */}
           <Magnetic strength={0.3} className="w-full sm:w-auto">
             <a
-              href="#estimator"
+              href="#contact"
               onClick={() => playClick(620)}
-              className="hero-cta inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-ember-hi/40 bg-ember/10 px-6 py-3.5 sm:px-7 sm:py-4 font-semibold text-ember-hi transition-all hover:bg-ember/25 hover:border-ember-hi"
+              className="hero-cta inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-ember/50 bg-ember/10 px-7 py-4 font-bold text-ember-hi text-sm sm:text-base transition-all hover:bg-ember/20 hover:border-ember"
             >
-              <IconCalculator className="size-4" />
-              <span>{t(lang, { en: "Estimate Project", fa: "برآورد هوشمند پرونده" })}</span>
+              <span>{t(lang, HERO.cta2)}</span>
             </a>
           </Magnetic>
 
-          <Magnetic strength={0.3} className="w-full sm:w-auto">
+          {/* Tertiary Action: CV Modal */}
+          <Magnetic strength={0.2} className="w-full sm:w-auto">
             <button
               type="button"
               onClick={() => {
@@ -199,26 +201,27 @@ function Hero({ lang, onTerminal, onResumeModal }) {
                 onResumeModal?.();
               }}
               data-cursor="link"
-              className="hero-cta inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-line px-6 py-3.5 sm:px-7 sm:py-4 text-center text-ash transition-colors hover:border-ember hover:text-bone"
+              className="hero-cta inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-line bg-coal/60 px-6 py-4 text-center text-ash text-sm transition-all hover:border-ember hover:text-bone"
             >
-              <IconDocument className="size-4" />
-              <span>{t(lang, { en: "Dossier CV", fa: "رزومه رسمی" })}</span>
+              <IconDocument className="size-4 text-ember-hi" />
+              <span>{t(lang, { en: "Resume / CV", fa: "دریافت رزومه" })}</span>
             </button>
           </Magnetic>
+        </div>
 
-          <Magnetic strength={0.2} className="w-full sm:w-auto">
-            <button
-              onClick={() => {
-                playClick(680);
-                onTerminal();
-              }}
-              data-cursor="link"
-              className="hero-cta inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-line px-5 py-3.5 sm:px-6 sm:py-4 text-center text-mute transition-colors hover:border-ash hover:text-ash"
+        {/* Quick Core Competencies Pill Strip */}
+        <div className="mt-8 flex flex-wrap items-center gap-2 text-xs text-mute">
+          <span className="mono text-[10px] uppercase tracking-widest text-ash">
+            {lang === "fa" ? "استک محوری:" : "CORE STACK:"}
+          </span>
+          {["React.js", "JavaScript", "Tailwind CSS", "SASS", "Git & GitHub", "WordPress", "AI Workflows"].map((tech) => (
+            <span
+              key={tech}
+              className="mono rounded-md border border-line/60 bg-coal/40 px-2.5 py-1 text-[10px] text-bone/80 tracking-wider"
             >
-              <IconTerminal className="size-3.5" />
-              <span>~/terminal</span>
-            </button>
-          </Magnetic>
+              {tech}
+            </span>
+          ))}
         </div>
       </div>
 

@@ -4,7 +4,7 @@
 
 **Cinematic Noir Frontend Architecture & Bespoke Interactive Experiences**
 
-[🌟 Live Demo](https://mahdyarmonfared.github.io/) · [💼 Profile](https://github.com/mahdyarmonfared) · [📫 Get in Touch](mailto:mahdyar.monfared09@gmail.com)
+[🌟 Live Demo](https://mahdyarmonfared.github.io/) · [💼 GitHub](https://github.com/mahdyarmonfared) · [👔 LinkedIn](https://www.linkedin.com/in/mahdyarmonfared) · [📫 Get in Touch](mailto:mahdyar.monfared09@gmail.com)
 
 ---
 
@@ -96,6 +96,7 @@ A GitHub Actions workflow is pre-configured in `.github/workflows/deploy.yml`. E
 
 **Mahdyar Monfared (مهدیار منفرد)**
 - GitHub: [@mahdyarmonfared](https://github.com/mahdyarmonfared)
+- LinkedIn: [mahdyarmonfared](https://www.linkedin.com/in/mahdyarmonfared)
 - Email: [mahdyar.monfared09@gmail.com](mailto:mahdyar.monfared09@gmail.com)
 - Location: Iran, Mashhad
 

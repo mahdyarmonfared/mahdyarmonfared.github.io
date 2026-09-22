@@ -1,40 +1,40 @@
 const t = (lang, b) => lang === "fa" ? b.fa : b.en;
 const BRAND = { en: "Mahdyar Monfared", fa: "\u0645\u0647\u062F\u06CC\u0627\u0631 \u0645\u0646\u0641\u0631\u062F" };
 const NAV = {
-  home: { en: "Index", fa: "نمایه" },
-  about: { en: "Dossier", fa: "پرونده" },
-  skills: { en: "Arsenal", fa: "زرادخانه" },
-  projects: { en: "Case Files", fa: "پرونده‌ها" },
-  impact: { en: "Impact", fa: "تأثیر" },
-  estimator: { en: "Estimator", fa: "برآورد" },
-  testimonials: { en: "Witnesses", fa: "شاهدان" },
-  experience: { en: "Timeline", fa: "گاه‌شمار" },
-  contact: { en: "Wire", fa: "تماس" }
+  home: { en: "Home", fa: "خانه" },
+  about: { en: "About", fa: "درباره من" },
+  skills: { en: "Skills", fa: "مهارت‌ها" },
+  projects: { en: "Projects", fa: "نمونه‌کارها" },
+  impact: { en: "Before / After", fa: "قبل و بعد" },
+  estimator: { en: "Estimator", fa: "برآورد هزینه" },
+  testimonials: { en: "Reviews", fa: "نظرات" },
+  experience: { en: "Timeline", fa: "سوابق" },
+  contact: { en: "Contact", fa: "تماس" }
 };
 const SCENE_LABELS = [
-  { en: "EVIDENCE ROOM", fa: "\u0627\u062A\u0627\u0642 \u0645\u062F\u0627\u0631\u06A9" },
-  { en: "THE ARCHIVE", fa: "\u0628\u0627\u06CC\u06AF\u0627\u0646\u06CC" },
-  { en: "NIGHT DRIVE", fa: "\u0631\u0627\u0646\u0646\u062F\u06AF\u06CC \u0634\u0628\u0627\u0646\u0647" },
-  { en: "THE LAST LIGHT", fa: "\u0622\u062E\u0631\u06CC\u0646 \u0646\u0648\u0631" }
+  { en: "EVIDENCE ROOM", fa: "اتاق مدارک" },
+  { en: "THE ARCHIVE", fa: "بایگانی" },
+  { en: "NIGHT DRIVE", fa: "رانندگی شبانه" },
+  { en: "THE LAST LIGHT", fa: "آخرین نور" }
 ];
 const HERO = {
   kicker: {
-    en: "FRONTEND DEVELOPER — WEB DESIGN — MASHHAD, IRAN",
-    fa: "توسعه‌دهنده فرانت‌اند — طراحی سایت و رابط کاربری — مشهد، ایران"
+    en: "FRONTEND DEVELOPER & WEB DESIGNER — MASHHAD, IRAN",
+    fa: "توسعه‌دهنده فرانت‌اند و طراح وب‌سایت — مشهد، ایران"
   },
   line1: { en: "I BUILD", fa: "من می‌سازم" },
-  line2: { en: "DARK", fa: "رابط‌هایی" },
-  line3: { en: "INTERFACES", fa: "نوآر و فراتر از انتظار" },
+  line2: { en: "DISTINCTIVE", fa: "رابط‌هایی" },
+  line3: { en: "INTERFACES", fa: "مدرن و تعاملی" },
   tail: {
-    en: "…and distinctive web experiences that react when you touch them.",
-    fa: "…و وب‌سایت‌های تعاملی و مدرنی که با هر لمس و نگاه کاربر، واکنشی زنده و هدفمند نشان می‌دهند."
+    en: "Specializing in React, high-performance web applications, and intuitive digital experiences that react when you touch them.",
+    fa: "طراحی و مهندسی وب‌سایت‌های واکنش‌گرا و وب‌اپلیکیشن‌های سریع با React، استانداردهای روز و کارایی حداکثری."
   },
-  cta: { en: "Open the files", fa: "بررسی پرونده‌ها و پروژه‌ها" },
-  cta2: { en: "Talk to me", fa: "شروع گفتگو و همکاری" },
-  scroll: { en: "scroll to descend", fa: "برای کاوش پرونده به پایین اسکرول کنید" }
+  cta: { en: "Explore Projects", fa: "مشاهده نمونه‌کارها" },
+  cta2: { en: "Get in Touch", fa: "ارتباط و همکاری" },
+  scroll: { en: "scroll to explore", fa: "برای کاوش بخش‌ها به پایین اسکرول کنید" }
 };
 const ABOUT = {
-  title: { en: "PERSONNEL FILE", fa: "پروندهٔ شخصی" },
+  title: { en: "ABOUT ME", fa: "درباره من" },
   code: "NO. 2009-MHD-∅",
   paragraphs: [
     {
@@ -61,38 +61,49 @@ const ABOUT = {
     bornVal: { en: "2009 — Mashhad", fa: "2009 — مشهد" }
   }
 };
-const SKILLS_TITLE = { en: "THE ARSENAL", fa: "زرادخانه فنی" };
+const SKILLS_TITLE = { en: "TECHNICAL SKILLS", fa: "مهارت‌های فنی" };
 const SKILLS_NOTE = {
-  en: "levels are honest, not decorative",
-  fa: "درصدها ارزیابی واقعی مهارت‌ها هستند، نه اعداد تزئینی"
+  en: "core competencies & technical mastery levels",
+  fa: "ارزیابی واقعی سطح تسلط و توانمندی‌های محوری"
 };
 const SKILLS = [
-  { name: "HTML5 & CSS3", level: 100, note: { en: "semantic structure & responsive layout", fa: "ساختار معنایی وب و طراحی کاملاً واکنش‌گرا" } },
-  { name: "JavaScript (ES6+)", level: 100, note: { en: "core DOM, async logic & modern features", fa: "منطق جاوااسکریپت، تعاملات DOM و توابع ناهمگام" } },
-  { name: "React", level: 100, note: { en: "component architecture, state & hooks", fa: "معماری کامپوننت، مدیریت State و هوک‌های مدرن" } },
-  { name: "Tailwind CSS", level: 100, note: { en: "utility-first styling & custom design tokens", fa: "طراحی سریع و حرفه‌ای با توکن‌های اختصاصی" } },
-  { name: "SCSS / Sass", level: 100, note: { en: "modular styling, mixins & BEM methodology", fa: "استایل‌نویسی ماژولار، متغیرها، میکسین‌ها و متدولوژی BEM" } },
-  { name: "Bootstrap", level: 100, note: { en: "grid systems, flexbox & rapid prototyping", fa: "سیستم گرید واکنش‌گرا و توسعه سریع رابط کاربری" } },
-  { name: "WordPress (Elementor, WooCommerce, RankMath)", level: 100, note: { en: "complete e-commerce, advanced page builder & SEO setup", fa: "راه‌اندازی کامل فروشگاه، المنتور پرو، سئو رنک‌مث و افزونه‌ها" } },
-  { name: "AI & Prompt Engineering", level: 88, note: { en: "advanced workflows, LLMs & generative UI", fa: "تسلط بر مدل‌های هوش مصنوعی، پرامپت‌نویسی پیشرفته و ابزارهای AI" } },
-  { name: "Back-End / Node.js", level: 10, note: { en: "foundation & active expansion into full-stack", fa: "در ابتدای مسیر یادگیری، ساخت سرور و ورود به دنیای فول‌استک" } }
+  { name: "Front-End Development", level: 100, note: { en: "responsive architecture, performance & modern UI", fa: "معماری واکنش‌گرا، پرفورمنس بالا و استانداردهای مدرن وب" } },
+  { name: "React.js", level: 100, note: { en: "component architecture, state management & hooks", fa: "معماری کامپوننت، مدیریت استیت و هوک‌های مدرن" } },
+  { name: "JavaScript", level: 100, note: { en: "modern ES6+, async logic, APIs & DOM mastery", fa: "جاوااسکریپت مدرن، منطق ناهمگام، API و تعاملات DOM" } },
+  { name: "HTML", level: 100, note: { en: "semantic structure, accessible elements & SEO hygiene", fa: "ساختار معنایی، دسترسی‌پذیری و استانداردهای وب" } },
+  { name: "Cascading Style Sheets (CSS)", level: 100, note: { en: "advanced layouts, flexbox, CSS grid & keyframe animations", fa: "لی‌آوت‌های پیشرفته، فلکس‌باکس، گرید و انیمیشن‌های CSS" } },
+  { name: "Tailwind CSS", level: 100, note: { en: "utility-first styling, design token systems & responsive design", fa: "طراحی ماژولار با توکن‌های اختصاصی و ریسپانسیو روان" } },
+  { name: "SASS", level: 100, note: { en: "modular styling, mixins, nesting & BEM methodology", fa: "استایل‌نویسی ساختاریافته، میکسین‌ها و متدولوژی BEM" } },
+  { name: "Bootstrap (Framework)", level: 100, note: { en: "responsive grid systems, flexbox & rapid prototyping", fa: "سیستم گرید واکنش‌گرا و پیاده‌سازی سریع رابط کاربری" } },
+  { name: "Git", level: 100, note: { en: "version control, branching strategies & clean commit hygiene", fa: "کنترل نسخه، استراتژی‌های برنچینگ و تاریخچه منظم" } },
+  { name: "GitHub", level: 100, note: { en: "CI/CD actions, collaboration, PR reviews & open source", fa: "اکشن‌های CI/CD، مدیریت مخازن، پول‌ریکوئست و متن‌باز" } },
+  { name: "Artificial Intelligence (AI)", level: 100, note: { en: "AI-assisted engineering, modern tooling & smart integrations", fa: "توسعه هوشمند با ابزارهای نوین AI و بهینه‌سازی کُد" } },
+  { name: "WordPress", level: 100, note: { en: "complete e-commerce, Elementor, WooCommerce & RankMath", fa: "راه‌اندازی کامل فروشگاه، المنتور پرو، ووکامرس و سئو" } },
+  { name: "AI & Prompt Engineering", level: 88, note: { en: "advanced LLM workflows, structured outputs & prompt design", fa: "پرامپت‌نویسی پیشرفته، خروجی‌های ساختاریافته و مدل‌های زبانی" } },
+  { name: "Back-End / Node.js", level: 10, note: { en: "backend foundations, REST APIs & expansion to full-stack", fa: "آشنایی با مبانی سرور، Express، API و ورود به فول‌استک" } }
 ];
-const PROJECTS_TITLE = { en: "CASE FILES", fa: "\u067E\u0631\u0648\u0646\u062F\u0647\u200C\u0647\u0627" };
+const PROJECTS_TITLE = { en: "PORTFOLIO & PROJECTS", fa: "نمونه‌کارها و پروژه‌ها" };
 const PROJECTS_SUB = {
-  en: "click a file to open the investigation",
-  fa: "\u0631\u0648\u06CC \u0647\u0631 \u067E\u0631\u0648\u0646\u062F\u0647 \u06A9\u0644\u06CC\u06A9 \u06A9\u0646 \u062A\u0627 \u062A\u062D\u0642\u06CC\u0642 \u0628\u0627\u0632 \u0634\u0648\u062F"
+  en: "curated live web applications & open-source engineering",
+  fa: "مجموعه وب‌سایت‌های فعال، پلتفرم‌ها و ابزارهای متن‌باز گیت‌هاب"
 };
-const CASE_LABEL = { en: "CASE", fa: "\u067E\u0631\u0648\u0646\u062F\u0647" };
-const OPEN_CASE = { en: "open case file", fa: "\u0628\u0627\u0632\u06A9\u0631\u062F\u0646 \u067E\u0631\u0648\u0646\u062F\u0647" };
-const CLOSE_CASE = { en: "close file", fa: "\u0628\u0633\u062A\u0646 \u067E\u0631\u0648\u0646\u062F\u0647" };
+const PROJECTS_CATEGORIES = {
+  all: { en: "All Projects", fa: "همه پروژه‌ها" },
+  website: { en: "Live Websites & Web Apps", fa: "وب‌سایت‌ها و پلتفرم‌های زنده" },
+  opensource: { en: "Open Source & GitHub Tools", fa: "ابزارهای متن‌باز و گیت‌هاب" }
+};
+const CASE_LABEL = { en: "CASE", fa: "پرونده" };
+const OPEN_CASE = { en: "inspect project", fa: "مشاهده جزئیات" };
+const CLOSE_CASE = { en: "close file", fa: "بستن پرونده" };
 const PROJECTS = [
   {
     id: "rockstar",
+    category: "website",
     name: { en: "Rockstar Games Clone", fa: "کلون وب‌سایت راک‌استار گیمز" },
     year: "2025",
     role: { en: "Frontend Developer & UI Architect", fa: "توسعه‌دهنده فرانت‌اند و معمار رابط کاربری" },
     status: "ACTIVE",
-    tags: ["JavaScript", "HTML5/CSS3", "Mega Menu", "Audio FX", "Responsive"],
+    tags: ["JavaScript ES6+", "HTML5/CSS3", "Mega Menu", "Audio FX", "Responsive"],
     summary: {
       en: "Cinematic, feature-complete recreation of the official Rockstar Games portal. Packed with video trailer showcases (GTA VI, RDR2, GTA Online), interactive mega menu, merchandise warehouse cart, deep search indexing, Vice City Neon theme toggle, and synchronized UI sound effects.",
       fa: "کلون سینمایی و تمام‌عیار وب‌سایت رسمی Rockstar Games؛ مجهز به پیش‌نمایش تریلر بازی‌ها (GTA VI، RDR2 و GTA Online)، مگا منوی پیشرفته، سبد خرید فروشگاه، موتور جستجوی هوشمند، حالت شبانه و تم نئون وایس‌سیتی و افکت‌های صوتی رابط کاربری."
@@ -111,11 +122,12 @@ const PROJECTS = [
   },
   {
     id: "niromotor",
+    category: "website",
     name: { en: "Niro Motor Industrial Clone", fa: "کلون پورتال صنعتی نیرو موتور" },
     year: "2025",
     role: { en: "Frontend & E-Commerce Developer", fa: "توسعه‌دهنده فرانت‌اند و رابط کاربری فروشگاهی" },
     status: "ACTIVE",
-    tags: ["SCSS", "JavaScript", "IRANYekan", "Product Compare", "Dark Mode"],
+    tags: ["SCSS", "JavaScript", "Product Compare", "Quick Search", "Dark Mode"],
     summary: {
       en: "Modern frontend engineering for the official portal of Niro Motor, Iran's largest motorcycle manufacturer. Features keyboard-driven quick search (Ctrl+K), multi-model technical comparison engine, live wishlist counter, instant Dark/Light mode switcher, categorized mega menu, and modular SCSS architecture.",
       fa: "توسعه فرانت‌اند پورتال رسمی گروه صنعتی نیرو موتور (بزرگترین تولیدکننده موتورسیکلت در ایران)؛ شامل جستجوی سریع با کلید میانبر Ctrl+K، سیستم مقایسه مشخصات فنی موتورسیکلت‌ها، لیست علاقه‌مندی‌ها با شمارنده زنده، تغییر تم تاریک/روشن، مگامنوی دسته‌بندی محصولات و استایل‌نویسی ماژولار SCSS."
@@ -134,18 +146,19 @@ const PROJECTS = [
   },
   {
     id: "boom",
+    category: "website",
     name: { en: "Boom Gaming Store", fa: "فروشگاه بازی و اشتراک دیجیتال بوم" },
     year: "2025",
     role: { en: "Sole Frontend Developer", fa: "طراح و توسعه‌دهنده فرانت‌اند" },
     status: "ACTIVE",
-    tags: ["Vite", "Modern JS", "Gaming Store", "WebP Assets", "RTL"],
+    tags: ["React 19", "Tailwind v4", "Instant Routing", "WebP Assets", "RTL"],
     summary: {
-      en: "High-performance digital storefront and subscription platform for gamers. Built with component-based architecture, WebP image asset optimization pipeline, responsive genre/platform filtering, digital gift cards catalogue, and conversion-optimized dark gaming aesthetic.",
-      fa: "طراحی و توسعه رابط کاربری سریع و مدرن فروشگاه بازی‌ها و اشتراک‌های دیجیتال (Boom Store)؛ مجهز به معماری کامپوننت‌محور، پایپ‌لاین فشرده‌سازی و بارگذاری سریع تصاویر WebP، فیلتر پیشرفته بر اساس دسته‌بندی و پلتفرم، ویترین گیفت‌کارت و طراحی دارک گیمینگ با تمرکز بر بالاترین نرخ تبدیل."
+      en: "Modern, ultra-fast Iranian E-Commerce SPA built with React 19 and Tailwind CSS v4. Features component-based architecture, WebP image asset optimization pipeline, responsive genre/platform filtering, digital gift cards catalogue, and conversion-optimized dark gaming aesthetic.",
+      fa: "طراحی و توسعه رابط کاربری سریع و مدرن فروشگاه بازی‌ها و اشتراک‌های دیجیتال (Boom Store) با React 19 و Tailwind CSS v4؛ مجهز به معماری کامپوننت‌محور، لودینگ سریع تصاویر WebP، فیلتر پیشرفته محصولات و استایل دارک گیمینگ."
     },
     clues: [
       { label: { en: "CLIENT / TYPE", fa: "نوع پروژه" }, value: { en: "Gaming & Digital Subscription Store", fa: "فروشگاه تخصصی بازی و اشتراک‌های دیجیتال" } },
-      { label: { en: "CORE STACK", fa: "استک فنی" }, value: { en: "Modern Frontend, WebP Optimization, Responsive CSS", fa: "فرانت‌اند مدرن، بهینه‌سازی WebP، استایل واکنش‌گرا" } },
+      { label: { en: "CORE STACK", fa: "استک فنی" }, value: { en: "React 19, Tailwind CSS v4, Modern JS, WebP", fa: "ری‌اکت ۱۹، تیل‌ویند نسخه‌ ۴، وب‌پک و بهینه‌سازی WebP" } },
       { label: { en: "KEY FOCUS", fa: "تمرکز فنی" }, value: { en: "Lightning-fast Page Loads, Seamless RTL Typography", fa: "سرعت بارگذاری فوق‌سریع و تایپوگرافی روان فارسی" } },
       { label: { en: "UI ARCHITECTURE", fa: "طراحی رابط" }, value: { en: "Cinematic Gaming Visuals & Product Filtering", fa: "کارت‌های گیمینگ سینمایی و فیلتر پیشرفته محصولات" } }
     ],
@@ -156,17 +169,119 @@ const PROJECTS = [
     accent: "ice"
   },
   {
-    id: "upcoming",
-    name: { en: "coming soon", fa: "به زودی" },
+    id: "holguard",
+    category: "opensource",
+    name: { en: "Hol-Guard (AI Agent Antivirus)", fa: "سامانه امنیتی و آنتی‌ویروس عامل‌های هوش مصنوعی" },
     year: "2026",
-    role: { en: "Classified", fa: "طبقه‌بندی‌شده" },
-    status: "SEALED",
-    tags: ["coming soon"],
-    tagMap: { en: "coming soon", fa: "به زودی" },
-    summary: { en: "", fa: "" },
-    clues: [],
-    links: null,
+    role: { en: "Open Source Creator & Maintainer", fa: "توسعه‌دهنده اصلی و طراح ابزار" },
+    status: "ACTIVE",
+    tags: ["AI Security", "Runtime Guard", "MCP Server", "Agent Safety"],
+    summary: {
+      en: "Open-source runtime antivirus and security guard for autonomous AI agents. Dynamically intercepts and blocks risky tools, unauthorized secret access, prompt injections, and malicious packages during runtime execution.",
+      fa: "آنتی‌ویروس و گارد امنیتی زمان اجرای متن‌باز برای عامل‌های خودمختار AI؛ رهگیری و مسدودسازی آنی ابزارهای پرخطر، دسترسی غیرمجاز به کلیدهای محرمانه و حملات تزریق پرامپت (Prompt Injection) در حین اجرای مدل‌ها."
+    },
+    clues: [
+      { label: { en: "TYPE", fa: "نوع پروژه" }, value: { en: "AI Systems Security & Agent Runtime Protection", fa: "امنیت سیستم‌های هوش مصنوعی و محافظت از عامل‌ها" } },
+      { label: { en: "CORE STACK", fa: "استک فنی" }, value: { en: "Node.js, AST Validation, Tool Sandboxing", fa: "جاوااسکریپت، تحلیل نحوی AST و ایزولاسیون ابزارها" } },
+      { label: { en: "PROTECTION", fa: "سطح محافظت" }, value: { en: "Prompt Injection & Secret Leak Prevention", fa: "جلوگیری از نشت متغیرهای محیطی و حملات تزریق پرامپت" } }
+    ],
+    links: {
+      live: "https://hol.org/guard",
+      github: "https://github.com/mahdyarmonfared/hol-guard"
+    },
     accent: "ember"
+  },
+  {
+    id: "quickshare",
+    category: "opensource",
+    name: { en: "QuickShare-QR", fa: "اشتراک‌گذاری سریع فایل در شبکه محلی با QR" },
+    year: "2025",
+    role: { en: "Creator & Systems Developer", fa: "توسعه‌دهنده ابزار" },
+    status: "ACTIVE",
+    tags: ["CLI Tool", "Node.js", "QR Code", "Local Wi-Fi", "Web UI"],
+    summary: {
+      en: "Instant, zero-config local Wi-Fi file sharing tool from terminal to mobile phone. Generates an interactive in-terminal QR code and serves a lightweight web interface for effortless local file transfers with zero internet or cloud dependencies.",
+      fa: "ابزار سبک و سریع اشتراک‌گذاری فایل میان رایانه و گوشی در شبکه Wi-Fi محلی؛ تولید خودکار کد QR در محیط ترمینال و میزبانی وب‌سرور داخلی سبک، بدون نیاز به اینترنت و سرورهای واسط ابری."
+    },
+    clues: [
+      { label: { en: "TYPE", fa: "نوع پروژه" }, value: { en: "Terminal CLI Utility & Local Network Sharing", fa: "ابزار خط فرمان ترمینال و شبکه محلی" } },
+      { label: { en: "CORE STACK", fa: "استک فنی" }, value: { en: "Node.js, Terminal-QR Engine, HTTP Stream", fa: "Node.js، موتور گرافیکی QR در خط فرمان، استریم HTTP" } },
+      { label: { en: "PRIVACY", fa: "حفظ حریم خصوصی" }, value: { en: "100% Local Peer-to-Peer without External Uplink", fa: "انتقال ۱۰۰٪ محلی بدون خروج حتی یک بایت داده به اینترنت" } }
+    ],
+    links: {
+      live: null,
+      github: "https://github.com/mahdyarmonfared/quickshare-qr"
+    },
+    accent: "ice"
+  },
+  {
+    id: "cleandrop",
+    category: "opensource",
+    name: { en: "CleanDrop CLI", fa: "ابزار خودکارسازی پاکسازی و مرتب‌سازی فایل‌ها" },
+    year: "2025",
+    role: { en: "CLI Author & Architect", fa: "توسعه‌دهنده ابزار خط فرمان" },
+    status: "ACTIVE",
+    tags: ["CLI Tool", "Automation", "File System", "Dry-Run", "Undo Stack"],
+    summary: {
+      en: "Smart, safe, and lightning-fast downloads & desktop auto-organizer CLI. Features automated extension sorting, simulated dry-run previews, and instant multi-step undo history to ensure zero accidental file loss.",
+      fa: "ابزار خط فرمان هوشمند برای مرتب‌سازی آنی پوشه دانلودها و دسکتاپ بر اساس نوع و فرمت فایل‌ها؛ مجهز به حالت شبیه‌سازی (Dry-run) و قابلیت بازگردانی تغییرات (Undo) جهت تضمین ۱۰۰٪ امنیت فایل‌های کاربر."
+    },
+    clues: [
+      { label: { en: "TYPE", fa: "نوع پروژه" }, value: { en: "Operating System Automation CLI", fa: "اتوماسیون سیستم‌عامل و خط فرمان" } },
+      { label: { en: "SAFETY", fa: "امنیت" }, value: { en: "Full Dry-Run Previews & Action Reversibility", fa: "پیش‌نمایش تغییرات و امکان بازگردانی کامل به حالت اولیه" } },
+      { label: { en: "EFFICIENCY", fa: "سرعت" }, value: { en: "Batch sorts thousands of files in milliseconds", fa: "تفکیک و دسته‌بندی هزاران فایل در کسری از ثانیه" } }
+    ],
+    links: {
+      live: null,
+      github: "https://github.com/mahdyarmonfared/cleandrop"
+    },
+    accent: "blood"
+  },
+  {
+    id: "secretscrub",
+    category: "opensource",
+    name: { en: "Secret-Scrub", fa: "اسکنر پیشرفته شناسایی کلیدهای محرمانه گیت" },
+    year: "2026",
+    role: { en: "DevSecOps & Tool Developer", fa: "توسعه‌دهنده ابزار امنیتی" },
+    status: "ACTIVE",
+    tags: ["Git Hook", "Security", "Shannon Entropy", "Credentials"],
+    summary: {
+      en: "Ultra-fast, zero-leak pre-commit secret scanner powered by Shannon entropy analysis and multi-provider credential pattern detection. Prevents AWS tokens, Stripe keys, and private credentials from ever entering git commits.",
+      fa: "اسکنر سبک و فوق‌سریع Pre-commit بر پایه محاسبه آنتروپی شانون (Shannon Entropy) جهت جلوگیری از کامیت تصادفی کلیدهای خصوصی، توکن‌های دسترسی AWS، Stripe و رمزهای عبور در مخازن کد."
+    },
+    clues: [
+      { label: { en: "TYPE", fa: "نوع پروژه" }, value: { en: "DevSecOps Pre-Commit Security Engine", fa: "موتور امنیت کد و پیش‌کامیت DevSecOps" } },
+      { label: { en: "DETECTION", fa: "شناسایی" }, value: { en: "Shannon Entropy Analysis + Known Secret Regex", fa: "تحلیل ریاضی پراکندگی داده و الگوهای کلیدهای حساس" } },
+      { label: { en: "LATENCY", fa: "تاخیر اجرا" }, value: { en: "Runs in less than 35ms per commit", fa: "اجرای نامحسوس در کمتر از ۳۵ میلی‌ثانیه" } }
+    ],
+    links: {
+      live: null,
+      github: "https://github.com/mahdyarmonfared/secret-scrub"
+    },
+    accent: "ember"
+  },
+  {
+    id: "hashdup",
+    category: "opensource",
+    name: { en: "HashDup CLI", fa: "جستجوگر سریع فایل‌های تکراری با SHA-256" },
+    year: "2025",
+    role: { en: "Systems & CLI Engineer", fa: "توسعه‌دهنده ابزار خط فرمان" },
+    status: "ACTIVE",
+    tags: ["CLI Tool", "SHA-256", "Stream Hashing", "Zero-Byte"],
+    summary: {
+      en: "High-performance, memory-efficient duplicate and zero-byte file finder powered by chunked SHA-256 stream hashing. Rapidly scans deep directory trees without RAM spikes.",
+      fa: "ابزار خط فرمان با کارایی بالا برای کشف فایل‌های تکراری و فایل‌های با حجم صفر در دایرکتوری‌های حجیم؛ با استفاده از هشینگ جریانی قطعه‌بندی‌شده SHA-256 بدون افزایش مصرف رم."
+    },
+    clues: [
+      { label: { en: "TYPE", fa: "نوع پروژه" }, value: { en: "Disk Space Optimization & Duplicate Finder", fa: "بهینه‌سازی فضای دیسک و یافتن فایل‌های مشابه" } },
+      { label: { en: "ALGORITHM", fa: "الگوریتم" }, value: { en: "Chunked Stream SHA-256 Verification", fa: "اعتبارسنجی قطعه‌به‌قطعه با رمزنگاری SHA-256" } },
+      { label: { en: "SAFETY", fa: "امنیت" }, value: { en: "Non-destructive reporting with selective cleanup", fa: "گزارش‌دهی امن بدون حذف خودکار مگر با تایید کاربر" } }
+    ],
+    links: {
+      live: null,
+      github: "https://github.com/mahdyarmonfared/hashdup-cli"
+    },
+    accent: "ice"
   }
 ];
 const TIMELINE_TITLE = { en: "TIMELINE", fa: "\u06AF\u0627\u0647\u200C\u0634\u0645\u0627\u0631" };
@@ -218,8 +333,8 @@ const CONTACT = {
 };
 const SOCIALS = [
   { label: "GitHub", href: "https://github.com/mahdyarmonfared" },
-  { label: "Telegram", href: "https://t.me/MahdyarMonfared" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/mahdyarmonfared" }
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/mahdyarmonfared" },
+  { label: "Telegram", href: "https://t.me/MahdyarMonfared" }
 ];
 const FOOTER = {
   big: { en: "END OF REEL", fa: "\u067E\u0627\u06CC\u0627\u0646 \u0646\u0648\u0627\u0631" },
@@ -524,51 +639,58 @@ const RESUME_DATA = {
     title: { en: "MAHDYAR MONFARED", fa: "مهدیار منفرد" },
     subtitle: { en: "FRONTEND DEVELOPER & WEB DESIGNER", fa: "توسعه‌دهنده فرانت‌اند و طراح وب‌سایت" },
     docId: "DOSSIER #2009-MHD-CV",
-    classification: { en: "OFFICIAL PERSONNEL RECORD // CONFIDENTIAL", fa: "پرونده رسمی اسناد هویتی و فنی" },
+    classification: { en: "OFFICIAL PERSONNEL RECORD // RESUME", fa: "پرونده رسمی رزومه و مهارت‌های فنی" },
     base: { en: "Mashhad, Iran", fa: "مشهد، ایران" },
     contact: {
       email: "mahdyar.monfared09@gmail.com",
-      telegram: "@MahdyarMonfared",
-      github: "github.com/mahdyarmonfared"
+      linkedin: "linkedin.com/in/mahdyarmonfared",
+      github: "github.com/mahdyarmonfared",
+      telegram: "@MahdyarMonfared"
     }
   },
   objective: {
-    en: "Frontend Developer and Web Designer based in Mashhad, Iran. Passionate about building responsive, high-performance web experiences with React, JavaScript, Tailwind CSS, SCSS, and WordPress. Actively expanding into backend development to deliver comprehensive full-stack solutions.",
-    fa: "توسعه‌دهنده فرانت‌اند و طراح وب‌سایت مستقر در مشهد، ایران. متخصص در ساخت وب‌سایت‌های واکنش‌گرا و بهینه با React، جاوااسکریپت، Tailwind CSS، SCSS و وردپرس. با اشتیاق در حال گسترش مهارت‌ها به سمت بک‌اند جهت ارائه راهکارهای جامع و فول‌استک."
+    en: "Frontend Developer and Web Designer based in Mashhad, Iran. Specializing in responsive, high-performance web applications with React, JavaScript, Tailwind CSS, SASS, Bootstrap, Git/GitHub, and WordPress. Actively expanding into backend development with Node.js.",
+    fa: "توسعه‌دهنده فرانت‌اند و طراح وب‌سایت مستقر در مشهد، ایران. متخصص در ساخت وب‌سایت‌های واکنش‌گرا و بهینه با React، جاوااسکریپت، Tailwind CSS، SASS، بوت‌استرپ، گیت و وردپرس، و در حال گسترش مهارت‌ها به سمت بک‌اند با Node.js."
   },
   sections: [
     {
-      title: { en: "TECHNICAL ARSENAL", fa: "زرادخانه فنی و مهارت‌ها" },
+      title: { en: "TECHNICAL SKILLS (100% MASTERY)", fa: "مهارت‌های فنی و تخصصی" },
       items: [
-        { name: "Frontend Core (100%)", val: "React, JavaScript (ES6+), HTML5, CSS3, Responsive Architecture" },
-        { name: "Styling & Frameworks (100%)", val: "Tailwind CSS, SCSS / Sass, Bootstrap, Flexbox & Grid Systems" },
-        { name: "CMS & Platforms (100%)", val: "WordPress (Elementor, WooCommerce, RankMath, Theme Customization)" },
-        { name: "AI & Modern Workflows", val: "Advanced Prompt Engineering, LLMs Integration, Generative UI Tools" },
-        { name: "Backend & Systems", val: "Node.js (In early development & foundation 10%), Git, REST APIs, NPM" }
+        { name: "Frontend Core", val: "Front-End Development, React.js, JavaScript, HTML, CSS" },
+        { name: "CSS & Frameworks", val: "Tailwind CSS, SASS, Bootstrap (Framework), Responsive Grid" },
+        { name: "Version Control & Collaboration", val: "Git, GitHub, CI/CD Workflows, Open Source Repositories" },
+        { name: "CMS & Platforms", val: "WordPress (Elementor, WooCommerce, RankMath, Full Customization)" },
+        { name: "Artificial Intelligence", val: "Artificial Intelligence (AI), Prompt Engineering (88%), Modern LLMs" },
+        { name: "Backend & Systems", val: "Node.js (10% - foundations, REST APIs & expansion to full-stack)" }
       ]
     },
     {
-      title: { en: "NOTABLE CASE FILES (PROJECTS)", fa: "پرونده‌های شاخص (پروژه‌ها)" },
+      title: { en: "NOTABLE PROJECTS & OPEN SOURCE", fa: "پروژه‌ها و ابزارهای متن‌باز" },
       items: [
         {
-          name: "Rockstar Games Official Web Experience & Interactive Clone (2025)",
+          name: "Rockstar Games Official Web Experience & Clone (2025)",
           role: "Frontend Architect & Developer",
-          desc: "Engineered a high-fidelity cinematic clone of the official Rockstar Games portal with 4K video modals, interactive mega menu, merchandise cart, Vice City Neon theme, and Web Audio SFX."
+          desc: "Cinematic clone of Rockstar Games portal with 4K video modals, interactive mega menu, merchandise cart, Vice City Neon theme, and Web Audio SFX."
         },
         {
-          name: "Niro Motor — Industrial Motorcycle Portal Clone (2025)",
+          name: "Niro Motor Industrial Catalog Clone (2025)",
           role: "Frontend & E-Commerce Developer",
-          desc: "Developed modern catalog architecture for Iran's largest motorcycle manufacturer with Ctrl+K smart search, technical model comparison engine, live wishlist, dark mode, and modular SCSS."
+          desc: "Modern motorcycle catalog architecture with Ctrl+K smart search, technical model comparison engine, live wishlist, and modular SCSS."
         },
         {
           name: "BOOM — Digital Gaming & Subscription Storefront (2025)",
           role: "Sole Frontend Developer",
-          desc: "Designed and engineered a high-conversion digital gaming storefront with WebP asset optimization, responsive category filtering, and Persian RTL typography."
+          desc: "High-conversion digital gaming storefront with React 19, Tailwind CSS v4, WebP image pipeline, and instant routing."
+        },
+        {
+          name: "Hol-Guard — Open-Source AI Agent Antivirus (2026)",
+          role: "Open Source Creator & Maintainer",
+          desc: "Runtime security guard for autonomous AI agents, blocking risky tools, unauthorized secret leaks, and prompt injections."
         }
       ]
     },
     {
-      title: { en: "MILESTONES & EXPERIENCE", fa: "گاه‌شمار و سوابق تجربی" },
+      title: { en: "MILESTONES & TIMELINE", fa: "گاه‌شمار و مسیر پیشرفت" },
       items: [
         {
           name: "Advancing to Full-Stack & Systems (2026 →)",
@@ -588,7 +710,7 @@ const RESUME_DATA = {
       ]
     },
     {
-      title: { en: "WORK DOCTRINE & PRINCIPLES", fa: "دکترین کاری و اصول مهندسی" },
+      title: { en: "WORK PRINCIPLES", fa: "اصول و استانداردهای کاری" },
       items: [
         { name: "Speed & Impact", val: "Sub-second loading, clean rendering, and memorable interaction design." },
         { name: "Responsive Precision", val: "Pixel-perfect layouts across mobile, tablet, and ultra-wide displays." },
@@ -793,6 +915,7 @@ export {
   NOT_FOUND,
   OPEN_CASE,
   PROJECTS,
+  PROJECTS_CATEGORIES,
   PROJECTS_SUB,
   PROJECTS_TITLE,
   RESUME_DATA,
