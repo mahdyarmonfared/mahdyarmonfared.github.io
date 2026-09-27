@@ -20,30 +20,30 @@
 
 ## 🧭 Overview
 
-An unconventional, detective-noir themed personal portfolio engineered with precision, high-frame-rate interactions, and zero cookie-cutter templates. Features a dual-language interface (Persian & English), interactive device simulators, an ambient Web Audio synthesizer, and a real server-side performance auditing engine.
+An unconventional, noir-themed personal portfolio engineered by **Mahdyar Monfared** — a Frontend Engineer and Systems Thinker (**INTP // The Logician**). Built with first-principles reasoning, high-frame-rate interactions, and zero cookie-cutter templates. Features a dual-language interface (Persian & English), interactive device simulators, an ambient Web Audio synthesizer, a real server-side performance auditing engine, and an interactive terminal.
 
 ## 🚀 Key Engineering Features
 
+- **🧠 INTP Logician Engineering Philosophy**:
+  - Rooted in first-principles reasoning (Ti) and exploratory systems thinking (Ne) — deconstructing bloated web architectures down to bare metal and rebuilding with logical elegance.
 - **🎬 Cinematic Interactive Noir Aesthetic**:
   - Dark room grain filter, custom physics-driven cursor, ambient lighting bulbs with physics sway, and GSAP-powered motion orchestration.
   - Silk-smooth inertia scrolling powered by **Lenis**.
-
+- **📂 13 Curated Real-World Projects**:
+  - **4 Live Websites & Web Apps**: Rockstar Games Clone, Niro Motor Industrial Clone, Boom Gaming Store, and MarkFlow Vector A4 Resume Generator.
+  - **9 Open-Source Tools & Dev Utilities**: Commit-Craft CLI & Web, Port-Guard (EADDRINUSE Killer), Snap-Compress, Dotfiles-Sync CLI, Hol-Guard (AI Agent Antivirus), QuickShare-QR, CleanDrop CLI, Secret-Scrub, and HashDup CLI.
 - **📱 Exact-Geometry Live Device Simulator**:
   - Embedded live preview supporting **Desktop (1920×1080 FHD)**, **Tablet (1024×768)**, and **Mobile (390×844)** viewports.
   - Zero-overlap browser chrome, automatic sub-pixel scale calculation, and a one-click **Native 1080p Fullscreen HD mode**.
-
 - **⚖️ Physical Before/After Comparison Engine**:
   - Full 0% to 100% interactive slider comparing the stock commercial **Rockstar Games** portal against Mahdyar's custom **Vice City Neon Dark Mode**.
   - Bidirectional RTL/LTR physical coordinate math with zero sticking.
-
 - **📻 Atmospheric Noir Radio & Web Audio Synthesizer**:
   - Generative synthesizer simulating vinyl static, tube amp hum, neon hum, and noir frequencies.
   - Per-track and master volume mixer with frequency controls.
-
 - **⚡ Real-Time Server Performance Auditor**:
   - Measures true millisecond Time-to-First-Byte (TTFB) latency using high-resolution performance APIs.
   - Analyzes server HTTP response headers (`content-encoding`, `cache-control`, `HSTS`, `server`) and calculates user drop-off risks.
-
 - **🌐 Comprehensive Bilingual System (EN / فا)**:
   - Deep typography support for Persian (Vazirmatn) and English (Bricolage Grotesque & JetBrains Mono) with automatic direction (`dir="rtl"` / `dir="ltr"`).
 
@@ -57,6 +57,7 @@ An unconventional, detective-noir themed personal portfolio engineered with prec
 - **Smooth Scroll**: Lenis
 - **Audio Engine**: Web Audio API (Generative Oscillators & White Noise Synthesis)
 - **Deployment**: GitHub Actions CI/CD to GitHub Pages
+
 
 ---
 

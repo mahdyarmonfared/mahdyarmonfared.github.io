@@ -19,15 +19,15 @@ const SCENE_LABELS = [
 ];
 const HERO = {
   kicker: {
-    en: "FRONTEND DEVELOPER & WEB DESIGNER — MASHHAD, IRAN",
-    fa: "توسعه‌دهنده فرانت‌اند و طراح وب‌سایت — مشهد، ایران"
+    en: "FRONTEND ENGINEER & LOGICAL SYSTEMS THINKER // INTP — MASHHAD, IRAN",
+    fa: "مهندس فرانت‌اند، طراح وب و کاوشگر سیستم‌های نرم‌افزاری // INTP — مشهد، ایران"
   },
   line1: { en: "I BUILD", fa: "من می‌سازم" },
   line2: { en: "DISTINCTIVE", fa: "رابط‌هایی" },
   line3: { en: "INTERFACES", fa: "مدرن و تعاملی" },
   tail: {
-    en: "Specializing in React, high-performance web applications, and intuitive digital experiences that react when you touch them.",
-    fa: "طراحی و مهندسی وب‌سایت‌های واکنش‌گرا و وب‌اپلیکیشن‌های سریع با React، استانداردهای روز و کارایی حداکثری."
+    en: "Deconstructing complex web architectures, building from first principles, and crafting high-performance digital tools that react when you touch them.",
+    fa: "شکافتن معماری‌های پیچیده وب، ساخت نرم‌افزار بر پایه اصول بنیادین (First Principles)، و خلق ابزارهای دیجیتال پرفورمنس‌محور و واکنش‌گرا."
   },
   cta: { en: "Explore Projects", fa: "مشاهده نمونه‌کارها" },
   cta2: { en: "Get in Touch", fa: "ارتباط و همکاری" },
@@ -36,27 +36,30 @@ const HERO = {
 const ABOUT = {
   title: { en: "ABOUT ME", fa: "درباره من" },
   code: "NO. 2009-MHD-∅",
+  badge: { en: "INTP-T // LOGICIAN", fa: "INTP-T // منطق‌دان" },
   paragraphs: [
     {
-      en: "Born in 2009. Operating from Mashhad, Iran. I design and build modern web interfaces the way some people write noir novels — sharp typography, tactile responsiveness, and an experience that commands attention.",
-      fa: "متولد 2009؛ مستقر در مشهد، ایران. وب‌سایت‌ها و رابط‌های کاربری را با روایتی نوآر و متمایز خلق می‌کنم: تایپوگرافی چشم‌نواز، واکنش‌های لمسی روان، و ساختاری که فراتر از قالب‌های کلیشه‌ای اثر می‌گذارد."
+      en: "Born in 2009. Operating from Mashhad, Iran. As an INTP (The Logician), I view the web not as a collection of static templates, but as an interconnected ecosystem of systems waiting to be deconstructed, understood, and rebuilt with greater logical elegance.",
+      fa: "متولد 2009؛ مستقر در مشهد، ایران. به عنوان یک شخصیت منطق‌دان (INTP)، وب را صرفاً مجموعه‌ای از قالب‌های بصری نمی‌بینم؛ بلکه اکوسیستمی از ساختارهای به‌هم‌پیوسته می‌دانم که باید تا عمیق‌ترین لایه‌ها موشکافی، درک، و با ظرافت و نظم منطقی بازآفرینی شوند."
     },
     {
-      en: "JavaScript and React are my daily drivers, fortified with Tailwind CSS, SCSS, Bootstrap, and thorough mastery of WordPress and its entire plugin ecosystem. I don't build pages that merely sit on the screen; I craft responsive digital surfaces designed to convert and engage.",
-      fa: "تسلط بر JavaScript و React ابزارهای اصلی من هستند که با Tailwind CSS، SCSS، Bootstrap و احاطه کامل به وردپرس و اکوسیستم افزونه‌های آن پشتیبانی می‌شوند. وب‌سایت‌هایی می‌سازم که صرفاً بارگذاری نمی‌شوند، بلکه کاربر را جذب و درگیر خود می‌کنند."
+      en: "My engineering philosophy is rooted in first-principles reasoning: questioning assumptions, eliminating bloat, and mastering the underlying mechanics. JavaScript and React are my daily drivers, paired with Tailwind CSS, SCSS, component-driven design systems, and WordPress mastery. Alongside bespoke client applications, I obsessively design open-source CLI utilities and developer tools that automate friction away.",
+      fa: "رویکرد مهندسی من ریشه در تفکر از اصول بنیادین (First Principles) دارد: زیر سوال بردن فرضیات کلیشه‌ای، حذف بویلرپلیت‌های زائد و احاطه بر منطق زیرین سیستم‌ها. جاوااسکریپت و React ابزارهای هر روزه من هستند، همراه با Tailwind CSS، SCSS، دیزاین‌سیستم‌های ماژولار و اکوسیستم کامل وردپرس. در کنار وب‌سایت‌های سفارشی، با اشتیاق ابزارهای خط فرمان و یوتیلیتی‌های متن‌بازی می‌سازم که اصطکاک کارهای روزمره را از میان برمی‌دارند."
     },
     {
-      en: "Currently: shipping bespoke frontend solutions and web designs, while actively expanding into backend systems to bridge the gap into full-stack engineering. Available for ambitious freelance commissions and full-time roles.",
-      fa: "در حال حاضر: طراحی و مهندسی وب‌سایت‌های سفارشی و رابط‌های کاربری مدرن، و در عین حال پیشروی پیوسته به سمت بک‌اند و معماری فول‌استک. آماده برای پروژه‌های فریلنسری خاص و موقعیت‌های همکاری تمام‌وقت."
+      en: "Currently: architecting responsive frontend interfaces and developer tools, while expanding into Node.js backend infrastructure to achieve seamless full-stack coherence. Driven by insatiable curiosity, I am open for ambitious freelance commissions and engineering collaborations.",
+      fa: "در حال حاضر: مهندسی رابط‌های کاربری مدرن، طراحی وب اختصاصی و توسعه ابزارهای متن‌باز، همگام با گسترش به سمت زیرساخت Node.js جهت دستیابی به یکپارچگی کامل در لایه فول‌استک. با کنجکاوی بی‌پایان در حل مسائل پیچیده، آماده پروژه‌های چالش‌برانگیز فریلنسری و همکاری‌های شغلی هستم."
     }
   ],
   facts: {
     born: { en: "Born", fa: "متولد" },
     base: { en: "Based in", fa: "موقعیت" },
+    mbti: { en: "Personality", fa: "تیپ شخصیتی" },
     focus: { en: "Focus", fa: "تخصص محوری" },
     status: { en: "Status", fa: "وضعیت پذیرش" },
     statusOpen: { en: "OPEN — Freelance & Full-time", fa: "آماده همکاری — فریلنسری و تمام‌وقت" },
     focusVal: { en: "Web Design & Modern Frontend", fa: "طراحی سایت و توسعه فرانت‌اند مدرن" },
+    mbtiVal: { en: "INTP-T — The Logician", fa: "INTP-T — منطق‌دان (The Logician)" },
     baseVal: { en: "Mashhad, Iran", fa: "مشهد، ایران" },
     bornVal: { en: "2009 — Mashhad", fa: "2009 — مشهد" }
   }
@@ -165,6 +168,122 @@ const PROJECTS = [
     links: {
       live: "https://mahdyarmonfared.github.io/boom",
       github: "https://github.com/mahdyarmonfared/boom"
+    },
+    accent: "ice"
+  },
+  {
+    id: "markflow",
+    category: "website",
+    name: { en: "MarkFlow — Resume & Doc Generator", fa: "مارک‌فلو — ادیتور مارک‌داون و سازنده رزومه A4" },
+    year: "2025",
+    role: { en: "Creator & Frontend Architect", fa: "طراح و توسعه‌دهنده فرانت‌اند" },
+    status: "ACTIVE",
+    tags: ["React", "Markdown", "Vector PDF", "Live Preview", "Print Engine"],
+    summary: {
+      en: "Live dual-pane Markdown editor and vector-clean A4 PDF resume and document generator. Features instant typography preview, custom CSS styling themes, zero server uploads, and native print-to-PDF layout optimization.",
+      fa: "ویرایشگر تعاملی دوطرفه مارک‌داون و مولد رزومه و مستندات استاندارد A4 با خروجی وکتور PDF؛ مجهز به پیش‌نمایش آنی تایپوگرافی، تم‌های استایل‌دهی، عملکرد ۱۰۰٪ آفلاین در مرورگر و بهینه‌سازی دقیق پرینت بدون به‌هم‌ریختگی فونت‌ها."
+    },
+    clues: [
+      { label: { en: "CLIENT / TYPE", fa: "نوع پروژه" }, value: { en: "Web Productivity Application & PDF Engine", fa: "وب‌اپلیکیشن کاربردی و موتور تولید PDF" } },
+      { label: { en: "CORE STACK", fa: "استک فنی" }, value: { en: "React, Markdown Parser, CSS Paged Media, Vite", fa: "ری‌اکت، پارسر مارک‌داون، استایل‌های رسانه چاپی، Vite" } },
+      { label: { en: "PRIVACY & SPEED", fa: "حفظ حریم و سرعت" }, value: { en: "100% Client-Side In-Browser, Sub-10ms Render", fa: "پردازش ۱۰۰٪ محلی در مرورگر بدون ارسال داده به سرور" } },
+      { label: { en: "EXPORT FIDELITY", fa: "کیفیت خروجی" }, value: { en: "Lossless Crisp Vector Typography A4 Layout", fa: "خروجی A4 فوق‌العاده باکیفیت وکتور بدون افت رزولوشن" } }
+    ],
+    links: {
+      live: "https://mahdyarmonfared.github.io/markflow-resume",
+      github: "https://github.com/mahdyarmonfared/markflow-resume"
+    },
+    accent: "ember"
+  },
+  {
+    id: "commitcraft",
+    category: "opensource",
+    name: { en: "Commit-Craft CLI & Web", fa: "کامیت‌کرفت — دستیار هوشمند استانداردهای کامیت گیت" },
+    year: "2026",
+    role: { en: "Creator & Lead Maintainer", fa: "طراح و برنامه‌نویس اصلی" },
+    status: "ACTIVE",
+    tags: ["Conventional Commits", "CLI Tool", "Web Companion", "Git Hook", "SemVer"],
+    summary: {
+      en: "Interactive CLI and real-time Web companion for authoring standardized Conventional Commits. Enforces clean git histories, automatic Git hook integration, breaking-change tagging, and automatic changelog drafting.",
+      fa: "ابزار تعاملی خط فرمان و همراه تحت وب برای نگارش استاندارد Conventional Commits در گیت؛ یکپارچه‌سازی خودکار با Git Hooks، تشخیص تغییرات بنیادین (Breaking Changes) و استخراج خودکار گزارش تغییرات (Changelog)."
+    },
+    clues: [
+      { label: { en: "TYPE", fa: "نوع پروژه" }, value: { en: "Git Workflow & Conventional Commits CLI / Web", fa: "ابزار بهینه‌سازی جریان کاری گیت و کامیت استاندارد" } },
+      { label: { en: "CORE STACK", fa: "استک فنی" }, value: { en: "Node.js, Inquirer, Git Hooks, Conventional-Changelog", fa: "نودجی‌اس، هوک‌های محلی گیت، الگوی کامیت استاندارد" } },
+      { label: { en: "INTEGRATION", fa: "یکپارچه‌سازی" }, value: { en: "Zero-Config Husky & Git Integration", fa: "هماهنگی بدون پیکربندی با هوک‌های هاسکی و گیت" } }
+    ],
+    links: {
+      live: "https://mahdyarmonfared.github.io/commit-craft",
+      github: "https://github.com/mahdyarmonfared/commit-craft"
+    },
+    accent: "ice"
+  },
+  {
+    id: "portguard",
+    category: "opensource",
+    name: { en: "Port-Guard (EADDRINUSE Killer)", fa: "پورت‌گارد — بازرس و نابودکننده تداخل‌های پورت" },
+    year: "2025",
+    role: { en: "Creator & Systems Developer", fa: "توسعه‌دهنده ابزار سیستم" },
+    status: "ACTIVE",
+    tags: ["DevTool", "CLI Tool", "EADDRINUSE", "Process Killer", "Web Monitor"],
+    summary: {
+      en: "Cross-platform port conflict inspector and instant process terminator CLI with an interactive Web monitor. Solves the notorious EADDRINUSE developer nightmare with one keystroke, safe kill confirmations, and detailed PID telemetry.",
+      fa: "ابزار مالتی‌پلتفرم بازرسی تداخل پورت‌ها و خاتمه‌دهنده فوری پروسه‌های مزاحم (EADDRINUSE) با مانیتور وب زنده؛ شناسایی سریع شناسه پروسه (PID)، اعلام فرآیندهای گوش‌به‌زنگ و آزادسازی فوری پورت تنها با یک کلید."
+    },
+    clues: [
+      { label: { en: "TYPE", fa: "نوع پروژه" }, value: { en: "Developer Productivity & Process Inspector DevTool", fa: "ابزار بهره‌وری توسعه‌دهندگان و بازرس پروسه‌ها" } },
+      { label: { en: "CORE STACK", fa: "استک فنی" }, value: { en: "Node.js, OS Telemetry (lsof/netstat), Web Monitor", fa: "نودجی‌اس، ابزارهای سیستمی لینوکس/مک/ویندوز، مانیتور تحت وب" } },
+      { label: { en: "SAFETY", fa: "امنیت اجرا" }, value: { en: "Graceful SIGINT/SIGKILL with confirmation safeguards", fa: "ارسال سیگنال ایمن به پروسه همراه با تاییدیه کاربر" } }
+    ],
+    links: {
+      live: null,
+      github: "https://github.com/mahdyarmonfared/port-guard"
+    },
+    accent: "blood"
+  },
+  {
+    id: "snapcompress",
+    category: "opensource",
+    name: { en: "Snap-Compress", fa: "اسنپ‌کامپرس — فشرده‌ساز تصاویر و مبدل WebP/AVIF" },
+    year: "2025",
+    role: { en: "Creator & Systems Developer", fa: "توسعه‌دهنده ابزار" },
+    status: "ACTIVE",
+    tags: ["Batch Compressor", "WebP", "AVIF", "CLI Tool", "Client Web GUI"],
+    summary: {
+      en: "Ultra-fast batch image compressor and modern WebP/AVIF format converter. Includes both a terminal CLI for bulk automation and a 100% private, client-side Web GUI for drag-and-drop optimization with zero server transfers.",
+      fa: "ابزار فوق‌سریع فشرده‌سازی دسته‌ای تصاویر و تبدیل فرمت به WebP و AVIF؛ دارای هر دو رابط خط فرمان ترمینال برای خودکارسازی‌های انبوه و رابط کاربری وب ۱۰۰٪ آفلاین و محلی برای فشرده‌سازی با کشیدن و رها کردن فایل‌ها."
+    },
+    clues: [
+      { label: { en: "TYPE", fa: "نوع پروژه" }, value: { en: "High-Performance Image Optimization & Format Converter", fa: "بهینه‌سازی تصاویر با عملکرد بالا و تبدیل فرمت‌های مدرن" } },
+      { label: { en: "CORE STACK", fa: "استک فنی" }, value: { en: "WebAssembly / Canvas, Node.js, WebP, AVIF Engine", fa: "وب‌اسمبلی، Canvas، استریم پردازش تصویر، نودجی‌اس" } },
+      { label: { en: "SAVINGS", fa: "میزان صرفه‌جویی" }, value: { en: "Up to 85% file size reduction with visual parity", fa: "کاهش تا ۸۵٪ حجم تصویر با حفظ کیفیت بصری چشم‌نواز" } }
+    ],
+    links: {
+      live: "https://mahdyarmonfared.github.io/snap-compress",
+      github: "https://github.com/mahdyarmonfared/snap-compress"
+    },
+    accent: "ember"
+  },
+  {
+    id: "dotfiles",
+    category: "opensource",
+    name: { en: "Dotfiles-Sync CLI", fa: "دات‌فایلز سینک — پشتیبان‌گیری و همگام‌ساز پیکربندی لینوکس" },
+    year: "2025",
+    role: { en: "CLI Author & Architect", fa: "طراح و توسعه‌دهنده ابزار خط فرمان" },
+    status: "ACTIVE",
+    tags: ["CLI Tool", "Bash / Shell", "Dotfiles", "Git Backup", "Linux/macOS"],
+    summary: {
+      en: "Automated developer configuration backup and restoration CLI. Discovers .bashrc, .zshrc, .gitconfig, and IDE settings, organizes them into a structured Git repository, and restores any dev environment on a fresh machine in seconds.",
+      fa: "اسکریپت و ابزار خط فرمان خودکار برای پشتیبان‌گیری و همگام‌سازی فایل‌های پیکربندی توسعه‌دهنده (.bashrc، .zshrc، .gitconfig، تنظیمات VSCode و...)؛ ساختاردهی در ریپازیتوری گیت و بازیابی سریع محیط توسعه در رایانه‌های جدید تنها در چند ثانیه."
+    },
+    clues: [
+      { label: { en: "TYPE", fa: "نوع پروژه" }, value: { en: "Developer Environment Sync & Dotfiles Management", fa: "مدیریت و همگام‌سازی محیط توسعه و تنظیمات لینوکس" } },
+      { label: { en: "CORE STACK", fa: "استک فنی" }, value: { en: "Shell / Bash, Node.js CLI, Git Symlink Automation", fa: "بش اسکریپت، نودجی‌اس، پیوندهای نمادین (Symlinks) و گیت" } },
+      { label: { en: "PORTABILITY", fa: "سازگاری و سرعت" }, value: { en: "One-command restore for Linux & macOS machines", fa: "بازیابی کل تنظیمات سیستم در کامپیوتر تازه با یک دستور" } }
+    ],
+    links: {
+      live: null,
+      github: "https://github.com/mahdyarmonfared/dotfiles-sync-cli"
     },
     accent: "ice"
   },
@@ -637,7 +756,7 @@ const LAB_DATA = {
 const RESUME_DATA = {
   header: {
     title: { en: "MAHDYAR MONFARED", fa: "مهدیار منفرد" },
-    subtitle: { en: "FRONTEND DEVELOPER & WEB DESIGNER", fa: "توسعه‌دهنده فرانت‌اند و طراح وب‌سایت" },
+    subtitle: { en: "FRONTEND ENGINEER & LOGICAL SYSTEMS THINKER (INTP)", fa: "مهندس فرانت‌اند و کاوشگر سیستم‌های نرم‌افزاری (INTP)" },
     docId: "DOSSIER #2009-MHD-CV",
     classification: { en: "OFFICIAL PERSONNEL RECORD // RESUME", fa: "پرونده رسمی رزومه و مهارت‌های فنی" },
     base: { en: "Mashhad, Iran", fa: "مشهد، ایران" },
@@ -649,8 +768,8 @@ const RESUME_DATA = {
     }
   },
   objective: {
-    en: "Frontend Developer and Web Designer based in Mashhad, Iran. Specializing in responsive, high-performance web applications with React, JavaScript, Tailwind CSS, SASS, Bootstrap, Git/GitHub, and WordPress. Actively expanding into backend development with Node.js.",
-    fa: "توسعه‌دهنده فرانت‌اند و طراح وب‌سایت مستقر در مشهد، ایران. متخصص در ساخت وب‌سایت‌های واکنش‌گرا و بهینه با React، جاوااسکریپت، Tailwind CSS، SASS، بوت‌استرپ، گیت و وردپرس، و در حال گسترش مهارت‌ها به سمت بک‌اند با Node.js."
+    en: "Frontend Engineer and Systems Thinker (INTP) based in Mashhad, Iran. Specializing in first-principles reasoning, high-performance web applications with React, JavaScript, Tailwind CSS, SASS, Bootstrap, Git/GitHub, and WordPress. Author of open-source developer tooling and actively expanding into backend systems with Node.js.",
+    fa: "مهندس فرانت‌اند و کاوشگر سیستم‌های نرم‌افزاری (INTP) مستقر در مشهد، ایران. متخصص در استدلال از اصول بنیادین (First Principles)، ساخت وب‌سایت‌های واکنش‌گرا و وب‌اپلیکیشن‌های بهینه با React، جاوااسکریپت، Tailwind CSS، SASS، بوت‌استرپ و اکوسیستم کامل وردپرس. خالق ابزارهای متن‌باز توسعه‌دهندگان و در حال گسترش مهارت‌ها به سمت بک‌اند با Node.js."
   },
   sections: [
     {
@@ -665,8 +784,28 @@ const RESUME_DATA = {
       ]
     },
     {
-      title: { en: "NOTABLE PROJECTS & OPEN SOURCE", fa: "پروژه‌ها و ابزارهای متن‌باز" },
+      title: { en: "NOTABLE PROJECTS & OPEN SOURCE (13 CURATED)", fa: "پروژه‌ها و ابزارهای متن‌باز (۱۳ پرونده)" },
       items: [
+        {
+          name: "Commit-Craft CLI & Web Companion (2026)",
+          role: "Creator & Lead Maintainer",
+          desc: "Interactive Conventional Commits CLI and Web tool enforcing standard git history, Git Hooks, breaking changes, and changelog automation."
+        },
+        {
+          name: "Port-Guard — EADDRINUSE Killer & Port Inspector (2025)",
+          role: "Systems & CLI Developer",
+          desc: "Cross-platform developer CLI and live Web Monitor solving port conflicts, PID telemetry, and safe process termination."
+        },
+        {
+          name: "MarkFlow — Dual-Pane Markdown & Vector A4 Resume Generator (2025)",
+          role: "Frontend Architect & Creator",
+          desc: "Live in-browser Markdown editor and crisp vector A4 PDF export engine with custom typography themes and zero server dependencies."
+        },
+        {
+          name: "Snap-Compress — Batch Image Compressor & WebP/AVIF Converter (2025)",
+          role: "Systems Developer",
+          desc: "High-performance batch CLI + client-side offline Web GUI achieving up to 85% image size reduction with zero visual degradation."
+        },
         {
           name: "Rockstar Games Official Web Experience & Clone (2025)",
           role: "Frontend Architect & Developer",
@@ -710,11 +849,11 @@ const RESUME_DATA = {
       ]
     },
     {
-      title: { en: "WORK PRINCIPLES", fa: "اصول و استانداردهای کاری" },
+      title: { en: "ENGINEERING PRINCIPLES (INTP)", fa: "اصول و استانداردهای مهندسی" },
       items: [
-        { name: "Speed & Impact", val: "Sub-second loading, clean rendering, and memorable interaction design." },
-        { name: "Responsive Precision", val: "Pixel-perfect layouts across mobile, tablet, and ultra-wide displays." },
-        { name: "Maintainable Architecture", val: "Modular component composition, DRY styling, and well-structured markup." }
+        { name: "First-Principles Reasoning", val: "Deconstruct systems to core foundations, eliminate bloat, and engineer without boilerplate dogmas." },
+        { name: "Tactile Weight & Velocity", val: "Sub-second initial paint, silky 60fps responsiveness, and zero unexpected layout shift." },
+        { name: "Modular Architecture", val: "Clean component composition, single responsibility, and predictable developer ergonomics." }
       ]
     }
   ]

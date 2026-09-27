@@ -33,6 +33,7 @@ export function About({ lang }) {
   const facts = [
     { k: ABOUT.facts.born, v: ABOUT.facts.bornVal },
     { k: ABOUT.facts.base, v: ABOUT.facts.baseVal },
+    { k: ABOUT.facts.mbti, v: ABOUT.facts.mbtiVal, pulse: true },
     { k: ABOUT.facts.focus, v: ABOUT.facts.focusVal },
     { k: ABOUT.facts.status, v: ABOUT.facts.statusOpen, live: true }
   ];
@@ -46,8 +47,9 @@ export function About({ lang }) {
           className="dotted-grid relative rounded-xl border border-line bg-coal p-5 sm:p-10 lg:p-12 shadow-xl shadow-black/40"
         >
           {/* Stamp */}
-          <div className="stamp absolute end-4 sm:end-6 top-4 sm:top-6 rounded px-2.5 sm:px-3 py-1 text-[9px] sm:text-[10px] font-bold opacity-80 z-10">
-            {lang === "fa" ? "محرمانه" : "CONFIDENTIAL"}
+          <div className="stamp absolute end-4 sm:end-6 top-4 sm:top-6 rounded px-2.5 sm:px-3 py-1 text-[9px] sm:text-[10px] font-bold opacity-80 z-10 flex items-center gap-1.5 border border-ember/40 bg-void/60 text-ember backdrop-blur-sm">
+            <span className="size-1.5 rounded-full bg-ember anim-pulse-dot" />
+            <span>{t(lang, ABOUT.badge)}</span>
           </div>
 
           {/* Profile Header */}
@@ -70,7 +72,7 @@ export function About({ lang }) {
                 {t(lang, BRAND)}
               </p>
               <p className="text-xs sm:text-sm text-ash truncate">
-                {t(lang, { en: "frontend developer · web designer", fa: "توسعه‌دهنده فرانت‌اند · طراح سایت" })}
+                {t(lang, { en: "frontend engineer · systems thinker", fa: "مهندس فرانت‌اند · کاوشگر سیستم‌ها" })}
               </p>
             </div>
           </div>
@@ -110,10 +112,10 @@ export function About({ lang }) {
               </span>
               <span
                 className={`text-start sm:text-end font-display text-sm sm:text-base font-bold ${
-                  f.live ? "text-ember" : "text-bone"
+                  f.live || f.pulse ? "text-ember" : "text-bone"
                 }`}
               >
-                {f.live && (
+                {(f.live || f.pulse) && (
                   <span className="me-2 inline-block size-2 rounded-full bg-ember anim-pulse-dot align-middle" />
                 )}
                 {t(lang, f.v)}
@@ -129,12 +131,12 @@ export function About({ lang }) {
           >
             <p className="font-display text-xl sm:text-2xl font-extrabold leading-snug">
               {t(lang, {
-                en: '"Make it load in 800ms — then make it unforgettable."',
-                fa: "«۸۰۰ میلی‌ثانیه لود شود — بعد فراموش‌نشدنی باشد.»"
+                en: "«Deconstruct systems to their core, engineer from first principles, and never stop experimenting.»",
+                fa: "«شکافتن سیستم‌ها تا عمیق‌ترین لایه، بازمهندسی از اصول بنیادین (First Principles)، و کنجکاوی بی‌پایان در خلق و آزمایش.»"
               })}
             </p>
             <p className="mono mt-3 text-[9px] sm:text-[10px] uppercase tracking-widest text-mute">
-              — {lang === "fa" ? "دکترین کاری" : "working doctrine"}
+              — {lang === "fa" ? "جهان‌بینی و دکترین مهندسی (INTP)" : "engineering doctrine (INTP)"}
             </p>
           </div>
         </div>
