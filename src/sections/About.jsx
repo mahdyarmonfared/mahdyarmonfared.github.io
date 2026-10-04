@@ -33,7 +33,7 @@ export function About({ lang }) {
   const facts = [
     { k: ABOUT.facts.born, v: ABOUT.facts.bornVal },
     { k: ABOUT.facts.base, v: ABOUT.facts.baseVal },
-    { k: ABOUT.facts.mbti, v: ABOUT.facts.mbtiVal, pulse: true },
+    { k: ABOUT.facts.role, v: ABOUT.facts.roleVal, pulse: true },
     { k: ABOUT.facts.focus, v: ABOUT.facts.focusVal },
     { k: ABOUT.facts.status, v: ABOUT.facts.statusOpen, live: true }
   ];
@@ -136,7 +136,7 @@ export function About({ lang }) {
               })}
             </p>
             <p className="mono mt-3 text-[9px] sm:text-[10px] uppercase tracking-widest text-mute">
-              — {lang === "fa" ? "جهان‌بینی و دکترین مهندسی (INTP)" : "engineering doctrine (INTP)"}
+              — {lang === "fa" ? "دکترین و اصول مهندسی" : "engineering doctrine"}
             </p>
           </div>
         </div>

@@ -20,12 +20,12 @@
 
 ## 🧭 Overview
 
-An unconventional, noir-themed personal portfolio engineered by **Mahdyar Monfared** — a Frontend Engineer and Systems Thinker (**INTP // The Logician**). Built with first-principles reasoning, high-frame-rate interactions, and zero cookie-cutter templates. Features a dual-language interface (Persian & English), interactive device simulators, an ambient Web Audio synthesizer, a real server-side performance auditing engine, and an interactive terminal.
+An unconventional, noir-themed personal portfolio engineered by **Mahdyar Monfared** — a Frontend Engineer and Creative Web Developer. Built with first-principles reasoning, high-frame-rate interactions, and zero cookie-cutter templates. Features a dual-language interface (Persian & English), interactive device simulators, an ambient Web Audio synthesizer, a real server-side performance auditing engine, and an interactive terminal.
 
 ## 🚀 Key Engineering Features
 
-- **🧠 INTP Logician Engineering Philosophy**:
-  - Rooted in first-principles reasoning (Ti) and exploratory systems thinking (Ne) — deconstructing bloated web architectures down to bare metal and rebuilding with logical elegance.
+- **⚡ First-Principles Engineering Philosophy**:
+  - Deconstructing complex web architectures, eliminating bloated boilerplate, and building lightweight, high-performance digital tools from the ground up.
 - **🎬 Cinematic Interactive Noir Aesthetic**:
   - Dark room grain filter, custom physics-driven cursor, ambient lighting bulbs with physics sway, and GSAP-powered motion orchestration.
   - Silk-smooth inertia scrolling powered by **Lenis**.

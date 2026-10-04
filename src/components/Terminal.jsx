@@ -13,7 +13,7 @@ import {
 import { playClick, playGlitch, playBlip, toggleRainAmbience, isRainActive } from "../lib/sound.js";
 import { IconClose } from "./Icons.jsx";
 
-const QUICK_COMMANDS = ["help", "mbti", "portal", "lab", "radio", "impact", "book", "guarantee", "sketch", "estimator", "resume", "witnesses", "projects", "skills", "game", "clear", "exit"];
+const QUICK_COMMANDS = ["help", "portal", "lab", "radio", "impact", "book", "guarantee", "sketch", "estimator", "resume", "witnesses", "projects", "skills", "game", "clear", "exit"];
 
 function Terminal({
   open,
@@ -95,22 +95,8 @@ function Terminal({
         push(
           "out",
           fa
-            ? "دستورها: help · mbti · book · guarantee · sketch · impact · portal · lab · estimator · resume · witnesses · projects · open <n> · about · skills · rain · contact · socials · lang · game · 404 · clear · exit"
-            : "commands: help · mbti · book · guarantee · sketch · impact · portal · lab · estimator · resume · witnesses · projects · open <n> · about · skills · rain · contact · socials · lang · game · 404 · clear · exit"
-        );
-        break;
-      case "mbti":
-      case "personality":
-      case "logician":
-        push(
-          "out",
-          fa
-            ? "ARCHETYPE: INTP-T // منطق‌دان (The Logician)\n" +
-              "توابع شناختی: Ti (تفکر درون‌گرا / استدلال از اصول بنیادین) · Ne (شهود برون‌گرا / کاوش و پیوند ایده‌ها) · Si (حس درون‌گرا) · Fe (احساس برون‌گرا)\n" +
-              "رویکرد مهندسی: شکستن مسائل پیچیده به پایه‌ای‌ترین اجزا، پرهیز از بویلرپلیت‌های زائد، معماری ماژولار و ساخت ابزارهای متن‌باز برای حل چالش‌های واقعی توسعه‌دهندگان."
-            : "ARCHETYPE: INTP-T // The Logician\n" +
-              "COGNITIVE STACK: Ti (Dominant / First-Principles Reasoning) · Ne (Auxiliary / Exploratory Pattern Mapping) · Si (Tertiary) · Fe (Inferior)\n" +
-              "ENGINEERING PHILOSOPHY: Deconstruct systems to atomic foundations, eliminate unnecessary boilerplate, reason from first principles, and build pragmatic open-source developer tooling."
+            ? "دستورها: help · book · guarantee · sketch · impact · portal · lab · estimator · resume · witnesses · projects · open <n> · about · skills · rain · contact · socials · lang · game · 404 · clear · exit"
+            : "commands: help · book · guarantee · sketch · impact · portal · lab · estimator · resume · witnesses · projects · open <n> · about · skills · rain · contact · socials · lang · game · 404 · clear · exit"
         );
         break;
       case "book":
@@ -210,8 +196,8 @@ function Terminal({
         push(
           "out",
           t(lang, {
-            en: "Mahdyar Monfared — Frontend Engineer & Logical Systems Thinker (INTP), Mashhad. Deconstructs web architectures, crafts high-performance interfaces, and engineers developer tools.",
-            fa: "مهدیار منفرد — مهندس فرانت‌اند و کاوشگر سیستم‌های نرم‌افزاری (INTP)، مشهد. شکافتن سیستم‌ها، خلق رابط‌های کاربری پرفورمنس‌محور و ابزارهای متن‌باز توسعه‌دهندگان."
+            en: "Mahdyar Monfared — Frontend Engineer & Creative Web Developer, Mashhad. Deconstructs web architectures, crafts high-performance interfaces, and engineers developer tools.",
+            fa: "مهدیار منفرد — مهندس فرانت‌اند و توسعه‌دهنده خلاق وب، مشهد. شکافتن سیستم‌ها، خلق رابط‌های کاربری پرفورمنس‌محور و ابزارهای متن‌باز توسعه‌دهندگان."
           })
         );
         break;

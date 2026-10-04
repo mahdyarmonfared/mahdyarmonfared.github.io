@@ -19,8 +19,8 @@ const SCENE_LABELS = [
 ];
 const HERO = {
   kicker: {
-    en: "FRONTEND ENGINEER & LOGICAL SYSTEMS THINKER // INTP — MASHHAD, IRAN",
-    fa: "مهندس فرانت‌اند، طراح وب و کاوشگر سیستم‌های نرم‌افزاری // INTP — مشهد، ایران"
+    en: "FRONTEND ENGINEER & CREATIVE WEB DEVELOPER — MASHHAD, IRAN",
+    fa: "مهندس فرانت‌اند و توسعه‌دهنده خلاق وب — مشهد، ایران"
   },
   line1: { en: "I BUILD", fa: "من می‌سازم" },
   line2: { en: "DISTINCTIVE", fa: "رابط‌هایی" },
@@ -36,11 +36,11 @@ const HERO = {
 const ABOUT = {
   title: { en: "ABOUT ME", fa: "درباره من" },
   code: "NO. 2009-MHD-∅",
-  badge: { en: "INTP-T // LOGICIAN", fa: "INTP-T // منطق‌دان" },
+  badge: { en: "SYSTEMS ARCHITECT", fa: "معماری سیستم" },
   paragraphs: [
     {
-      en: "Born in 2009. Operating from Mashhad, Iran. As an INTP (The Logician), I view the web not as a collection of static templates, but as an interconnected ecosystem of systems waiting to be deconstructed, understood, and rebuilt with greater logical elegance.",
-      fa: "متولد 2009؛ مستقر در مشهد، ایران. به عنوان یک شخصیت منطق‌دان (INTP)، وب را صرفاً مجموعه‌ای از قالب‌های بصری نمی‌بینم؛ بلکه اکوسیستمی از ساختارهای به‌هم‌پیوسته می‌دانم که باید تا عمیق‌ترین لایه‌ها موشکافی، درک، و با ظرافت و نظم منطقی بازآفرینی شوند."
+      en: "Born in 2009. Operating from Mashhad, Iran. I view the web not as a collection of static templates, but as an interconnected ecosystem of systems waiting to be deconstructed, understood, and rebuilt with greater logical elegance.",
+      fa: "متولد 2009؛ مستقر در مشهد، ایران. وب را صرفاً مجموعه‌ای از قالب‌های بصری نمی‌بینم؛ بلکه اکوسیستمی از ساختارهای به‌هم‌پیوسته می‌دانم که باید تا عمیق‌ترین لایه‌ها موشکافی، درک، و با ظرافت و نظم منطقی بازآفرینی شوند."
     },
     {
       en: "My engineering philosophy is rooted in first-principles reasoning: questioning assumptions, eliminating bloat, and mastering the underlying mechanics. JavaScript and React are my daily drivers, paired with Tailwind CSS, SCSS, component-driven design systems, and WordPress mastery. Alongside bespoke client applications, I obsessively design open-source CLI utilities and developer tools that automate friction away.",
@@ -54,12 +54,12 @@ const ABOUT = {
   facts: {
     born: { en: "Born", fa: "متولد" },
     base: { en: "Based in", fa: "موقعیت" },
-    mbti: { en: "Personality", fa: "تیپ شخصیتی" },
+    role: { en: "Role", fa: "نقش محوری" },
     focus: { en: "Focus", fa: "تخصص محوری" },
     status: { en: "Status", fa: "وضعیت پذیرش" },
     statusOpen: { en: "OPEN — Freelance & Full-time", fa: "آماده همکاری — فریلنسری و تمام‌وقت" },
+    roleVal: { en: "Frontend & Systems Engineer", fa: "مهندسی فرانت‌اند و سیستم‌ها" },
     focusVal: { en: "Web Design & Modern Frontend", fa: "طراحی سایت و توسعه فرانت‌اند مدرن" },
-    mbtiVal: { en: "INTP-T — The Logician", fa: "INTP-T — منطق‌دان (The Logician)" },
     baseVal: { en: "Mashhad, Iran", fa: "مشهد، ایران" },
     bornVal: { en: "2009 — Mashhad", fa: "2009 — مشهد" }
   }
@@ -756,7 +756,7 @@ const LAB_DATA = {
 const RESUME_DATA = {
   header: {
     title: { en: "MAHDYAR MONFARED", fa: "مهدیار منفرد" },
-    subtitle: { en: "FRONTEND ENGINEER & LOGICAL SYSTEMS THINKER (INTP)", fa: "مهندس فرانت‌اند و کاوشگر سیستم‌های نرم‌افزاری (INTP)" },
+    subtitle: { en: "FRONTEND ENGINEER & WEB ARCHITECT", fa: "مهندس فرانت‌اند و معمار وب" },
     docId: "DOSSIER #2009-MHD-CV",
     classification: { en: "OFFICIAL PERSONNEL RECORD // RESUME", fa: "پرونده رسمی رزومه و مهارت‌های فنی" },
     base: { en: "Mashhad, Iran", fa: "مشهد، ایران" },
@@ -768,8 +768,8 @@ const RESUME_DATA = {
     }
   },
   objective: {
-    en: "Frontend Engineer and Systems Thinker (INTP) based in Mashhad, Iran. Specializing in first-principles reasoning, high-performance web applications with React, JavaScript, Tailwind CSS, SASS, Bootstrap, Git/GitHub, and WordPress. Author of open-source developer tooling and actively expanding into backend systems with Node.js.",
-    fa: "مهندس فرانت‌اند و کاوشگر سیستم‌های نرم‌افزاری (INTP) مستقر در مشهد، ایران. متخصص در استدلال از اصول بنیادین (First Principles)، ساخت وب‌سایت‌های واکنش‌گرا و وب‌اپلیکیشن‌های بهینه با React، جاوااسکریپت، Tailwind CSS، SASS، بوت‌استرپ و اکوسیستم کامل وردپرس. خالق ابزارهای متن‌باز توسعه‌دهندگان و در حال گسترش مهارت‌ها به سمت بک‌اند با Node.js."
+    en: "Frontend Engineer and Systems Thinker based in Mashhad, Iran. Specializing in first-principles reasoning, high-performance web applications with React, JavaScript, Tailwind CSS, SASS, Bootstrap, Git/GitHub, and WordPress. Author of open-source developer tooling and actively expanding into backend systems with Node.js.",
+    fa: "مهندس فرانت‌اند و کاوشگر سیستم‌های نرم‌افزاری مستقر در مشهد، ایران. متخصص در استدلال از اصول بنیادین (First Principles)، ساخت وب‌سایت‌های واکنش‌گرا و وب‌اپلیکیشن‌های بهینه با React، جاوااسکریپت، Tailwind CSS، SASS، بوت‌استرپ و اکوسیستم کامل وردپرس. خالق ابزارهای متن‌باز توسعه‌دهندگان و در حال گسترش مهارت‌ها به سمت بک‌اند با Node.js."
   },
   sections: [
     {
@@ -849,7 +849,7 @@ const RESUME_DATA = {
       ]
     },
     {
-      title: { en: "ENGINEERING PRINCIPLES (INTP)", fa: "اصول و استانداردهای مهندسی" },
+      title: { en: "CORE ENGINEERING PRINCIPLES", fa: "اصول و استانداردهای مهندسی" },
       items: [
         { name: "First-Principles Reasoning", val: "Deconstruct systems to core foundations, eliminate bloat, and engineer without boilerplate dogmas." },
         { name: "Tactile Weight & Velocity", val: "Sub-second initial paint, silky 60fps responsiveness, and zero unexpected layout shift." },
